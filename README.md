@@ -1,93 +1,63 @@
-{-# LANGUAGE FlexibleContexts, RankNTypes, FlexibleInstances , DataKinds  #-}
-module Computation where
+A benchmark comparing the performance of different free monad implementations.
 
-import Base
-import Control.Monad
-import qualified Control.Monad.State.Strict as MTL
-import Control.Monad.Free.VanLaarhovenE
-import Transient.Base
-import Control.Applicative ((<|>))
-import Control.Monad.IO.Class
+The benchmark simulates the state monad using various flavors of free monads,
+and compares them to the standard State monad from transformers.
 
-tcomputation :: Int  -> TransIO ()
-tcomputation n= do
- forM_ [1..(n ::Int)] $ \_ -> do
-   s <- getSData <|> return (1 ::Int)
-   setSData $! s + 1
+See also: [Two failed attempts at extensible effects](https://ro-che.info/articles/2014-06-14-extensible-effects-failed).
 
--- To verify the execution add:
--- r <- getSData
--- liftIO $ print (r :: Int)
+Note that this is *not* a comparison of extensible effects system. Free
+monads *may* be used to implement an extensible effect system.
+Under most implementations, extensible effects introduce an even bigger overhead
+(dispatching upon the effect requests); this overhead is not present in this
+benchmark. However, if your free monad is slow (which it probably is, as this
+benchmark shows), any effect system based on it won't be fast.
 
-computation
-  :: (Monad m, MonadFree F m)
-  => Int
-  -> m ()
-computation n = forM_ [1..n] $ \_ -> do
-  s <- get
-  put $! s + 1
-{-#INLINABLE computation #-}
+## Running the benchmark
 
-mtlComputationIO ::  Int -> MTL.StateT Int IO ()
-mtlComputationIO n = forM_ [1..n] $ \_ -> do
-  s <- MTL.get
-  MTL.put $! s + 1
+    stack build && stack exec freemonad-benchmark -- -o results.html
 
-mtlComputationId:: Int -> MTL.State Int ()
-mtlComputationId n = forM_ [1..n] $ \_ -> do
-  s <- MTL.get
-  MTL.put $! s + 1
+## Results
 
-mtlComputationGeneral:: Monad m => Int -> MTL.StateT Int m ()
-mtlComputationGeneral n = forM_ [1..n] $ \_ -> do
-  s <- MTL.get
-  MTL.put $! s + 1
+[Criterion report](https://rawgit.com/feuerbach/freemonad-benchmark/master/results.html)
 
-computation2
-  :: (Monad m, MonadFree F m)
-  => Int
-  -> m ()
-computation2 n =
-  if n == 0
-    then return ()
-    else do
-      computation2 (n-1)
-      s <- get
-      put $! s + 1
+## Implementations
 
-mtlComputation2 :: Monad m => Int -> MTL.StateT Int m ()
-mtlComputation2 n =
-  if n == 0
-    then return ()
-    else do
-      mtlComputation2 (n-1)
-      s <- MTL.get
-      MTL.put $! s + 1
+1. **Free**
 
+    ``` haskell
+    data Free f a = Pure a | Free (f (Free f a))
+    ```
 
-data State s m = State{getState :: m s, putState :: s -> m ()}
+2. **Free/lazy**
 
-get_ :: HasEffect effects (State s) => Free effects s
-get_  = liftF getState
+    The same standard Free monad emulating the lazy State monad.
 
-put_ :: HasEffect effects (State s) => s -> Free effects ()
-put_ s = liftF (\st -> putState st s)
+3. **Church**
 
-vlComputation
-    :: (HasEffect effects (State Int)) =>
-       Int -> Free effects ()
+    The Church-encoded free monad:
 
-vlComputation n = forM_ [1..n] $ \_ -> do
-    s <- get_
-    put_ $! s + (1::Int)
+    ``` haskell
+    newtype ChurchFree f a = ChurchFree
+      { runChurchFree :: forall w. (a -> w) -> (f w -> w) -> w }
+    ```
 
+4. **Codensity**
+    
+    The standard Free monad, codensity-transformed. See
+    [Asymptotic Improvement of Computations over Free Monads](http://www.janis-voigtlaender.eu/papers/AsymptoticImprovementOfComputationsOverFreeMonads.pdf).
 
-myState :: State s (MTL.State s)
-myState = State {getState = MTL.get, putState = MTL.put}
+5. **NoRemorse**
 
-stateInterp = myState .:. EmptyE
+    A free monad from [Reflection without Remorse](http://okmij.org/ftp/Haskell/zseq.pdf).
 
-vl  :: Free '[State Int] a -> MTL.State Int a
-vl = iterM stateInterp
+6. **Freer**
 
+    The Freer monad from [Freer Monads, More Extensible
+    Effects](okmij.org/ftp/Haskell/extensible/more.pdft), aka the
+    [operational]() monad.
 
+## Workloads
+
+For every implementation, there are two tests, for left- and right-associated
+chains of binds. Some free monads (e.g. the standard one) suffer from quadratic
+complexity on left-associated chains of binds.
