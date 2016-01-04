@@ -5,6 +5,11 @@ import Base
 import Control.Monad
 import qualified Control.Monad.State.Strict as MTL
 import Control.Monad.Free.VanLaarhovenE
+import qualified Streaming.Prelude as S
+import qualified Streaming as S
+import Streaming (Stream(..), Of(..))
+import Control.Monad.Trans
+
 computation
   :: (Monad m, MonadFree F m)
   => Int
@@ -28,6 +33,21 @@ mtlComputationGeneral:: Monad m => Int -> MTL.StateT Int m ()
 mtlComputationGeneral n = forM_ [1..n] $ \_ -> do
   s <- MTL.get
   MTL.put $! s + 1
+  
+mtlComputationGeneralInlinable:: Monad m => Int -> MTL.StateT Int m ()
+mtlComputationGeneralInlinable n = forM_ [1..n] $ \_ -> do
+    s <- MTL.get
+    MTL.put $! s + 1
+{-#INLINABLE mtlComputationGeneralInlinable #-}
+
+streamingComp :: Monad m => Int -> Stream (Of Int) (MTL.StateT Int m) ()
+streamingComp = lift . mtlComputationGeneral
+
+streamingCompIO :: Int -> Stream (Of Int) (MTL.StateT Int IO) ()
+streamingCompIO = lift . mtlComputationIO
+
+streamingCompId :: Int -> Stream (Of Int) (MTL.State Int) ()
+streamingCompId = lift . mtlComputationId
 
 computation2
   :: (Monad m, MonadFree F m)
