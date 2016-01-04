@@ -1,4 +1,6 @@
-A benchmark comparing the performance of different free monad implementations.
+A benchmark comparing the performance of different free monad implementations. 
+
+In this fork the transient monad has been included
 
 The benchmark simulates the state monad using various flavors of free monads,
 and compares them to the standard State monad from transformers.
@@ -18,7 +20,7 @@ benchmark shows), any effect system based on it won't be fast.
 
 ## Results
 
-[Criterion report](https://rawgit.com/feuerbach/freemonad-benchmark/master/results.html)
+[Criterion report](https://rawgit.com/agocorona/freemonad-benchmark/master/results.html)
 
 ## Implementations
 
