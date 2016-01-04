@@ -1,0 +1,29 @@
+Configuring transient-0.1.1...
+ghc: warning: _tzset from msvcrt is linked instead of __imp__tzset
+Building transient-0.1.1...
+Preprocessing library transient-0.1.1...
+[1 of 9] Compiling Transient.Base   ( src\Transient\Base.hs, .stack-work\dist\x86_64-windows\Cabal-1.22.4.0\build\Transient\Base.o )
+[2 of 9] Compiling Transient.Logged ( src\Transient\Logged.hs, .stack-work\dist\x86_64-windows\Cabal-1.22.4.0\build\Transient\Logged.o )
+
+src\Transient\Logged.hs:28:10: Warning:
+    No explicit implementation for
+      ‘fmap’
+    In the instance declaration for ‘Functor TransLIO’
+
+src\Transient\Logged.hs:31:10: Warning:
+    No explicit implementation for
+      ‘pure’ and ‘<*>’
+    In the instance declaration for ‘Applicative TransLIO’
+[3 of 9] Compiling Transient.Indeterminism ( src\Transient\Indeterminism.hs, .stack-work\dist\x86_64-windows\Cabal-1.22.4.0\build\Transient\Indeterminism.o )
+[4 of 9] Compiling Transient.EVars  ( src\Transient\EVars.hs, .stack-work\dist\x86_64-windows\Cabal-1.22.4.0\build\Transient\EVars.o )
+[5 of 9] Compiling Transient.Move   ( src\Transient\Move.hs, .stack-work\dist\x86_64-windows\Cabal-1.22.4.0\build\Transient\Move.o )
+[6 of 9] Compiling Transient.Backtrack ( src\Transient\Backtrack.hs, .stack-work\dist\x86_64-windows\Cabal-1.22.4.0\build\Transient\Backtrack.o )
+[7 of 9] Compiling Transient.Stream.Resource ( src\Transient\Stream\Resource.hs, .stack-work\dist\x86_64-windows\Cabal-1.22.4.0\build\Transient\Stream\Resource.o )
+[8 of 9] Compiling Transient.Move.Services ( src\Transient\Move\Services.hs, .stack-work\dist\x86_64-windows\Cabal-1.22.4.0\build\Transient\Move\Services.o )
+[9 of 9] Compiling Transient.DDS    ( src\Transient\DDS.hs, .stack-work\dist\x86_64-windows\Cabal-1.22.4.0\build\Transient\DDS.o )
+In-place registering transient-0.1.1...
+ghc: warning: _tzset from msvcrt is linked instead of __imp__tzset
+Installing library in
+C:\Users\magocoal\OneDrive\Haskell\stuff\freemonad-benchmark\.stack-work\install\x86_64-windows\lts-3.7\7.10.2\lib\x86_64-windows-ghc-7.10.2\transient-0.1.1-8wy0Qmgdmoq4PvxeKMd1Rs
+Registering transient-0.1.1...
+ghc: warning: _tzset from msvcrt is linked instead of __imp__tzset

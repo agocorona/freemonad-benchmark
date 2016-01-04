@@ -1,4 +1,4 @@
-{-# LANGUAGE FlexibleContexts, RankNTypes#-}
+{-# LANGUAGE FlexibleContexts, RankNTypes,  BangPatterns #-}
 module Main (main) where
 
 import Base
@@ -14,9 +14,8 @@ import Data.Functor.Identity
 import Criterion (bench, nf, nfIO, bgroup, Benchmark)
 import Criterion.Main (defaultMain)
 import qualified Control.Monad.Free.VanLaarhovenE as VL
-import qualified Streaming.Prelude as S
-import qualified Streaming as S
-
+import Transient.Base
+import Control.DeepSeq
 n = 50
 
 benchmarks
@@ -25,25 +24,25 @@ benchmarks
   -> Int
   -> [Benchmark]
 benchmarks computation mtlComputation n =
-  [ 
+  [
   bench "Free" $ nf (flip Free.run 0 . computation) n
   , bench "Free/lazy" $ nf (flip Free.runLazily 0 . computation) n
-  , bench "Church" $ nf (flip Church.run 0 . computation) n
+  , bench "Chruch" $ nf (flip Church.run 0 . computation) n
   , bench "Codensity" $ nf (flip Codensity.run 0 . computation) n
   , bench "NoRemorse" $ nf (flip NoRemorse.run 0 . computation) n
   , bench "Freer" $ nf (flip Freer.run 0 . computation) n
   , bench "MTLGeneral" $ nf (flip MTL.runState 0 . mtlComputationGeneral) n
-  , bench "MTLGeneralInlinable" $ nf (flip MTL.runState 0 . mtlComputationGeneralInlinable) n
   , bench "MTLIdentity" $ nf (flip MTL.runState 0 . mtlComputationId) n
-  , bench "StreamingID" $ nf (flip MTL.runState 0 . S.effects . streamingCompId) n
-  , bench "StreamingMad" $ nf (flip unF 0 . S.run . computation) n
-  , bench "MTLIO" $ nfIO (MTL.runStateT (mtlComputationIO n) 0) 
+  , bench "MTLIO" $ nfIO (MTL.runStateT (mtlComputationIO n) 0)
   , bench "VL" $ nf (flip MTL.runState 0 . vl . vlComputation) n
+  , bench "Transient" $ nfIO (runTransient $ tcomputation 0)
 
   ]
+
+instance NFData EventF     where rnf !_ = ()
 
 main :: IO ()
 main = defaultMain
   [ bgroup "Right-assoc" $ benchmarks computation mtlComputationId n
---  , bgroup "Left-assoc" $ benchmarks computation2 mtlComputation2 n
+  , bgroup "Left-assoc" $ benchmarks computation2 mtlComputation2 n
   ]

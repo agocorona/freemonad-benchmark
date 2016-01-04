@@ -1,0 +1,265 @@
+
+==================== FINAL INTERFACE ====================
+2016-01-04 15:35:11.3047289 UTC
+
+interface main@main:Data.CTQueue 7102
+  interface hash: 235bf9f98e177d5e3e039a6ca01e8f7b
+  ABI hash: bb1d03bb9659928e786ebc7f006009fb
+  export-list hash: a1171145d834fa678f1b7b95b300016a
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: edf1f9c412498d891deeefdf393a057a
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Data.CTQueue.CTQueue{Data.CTQueue.C0 Data.CTQueue.CN}
+module dependencies: Data.Interface.Sequence
+                     Data.Interface.TSequence
+package dependencies: base-4.8.1.0* ghc-prim-0.4.0.0
+                      integer-gmp-1.0.0.0
+orphans: base-4.8.1.0:GHC.Base base-4.8.1.0:GHC.Float
+         main@main:Data.Interface.TSequence
+family instance modules: base-4.8.1.0:Control.Applicative
+                         base-4.8.1.0:Data.Either base-4.8.1.0:Data.Monoid
+                         base-4.8.1.0:Data.Type.Equality base-4.8.1.0:GHC.Generics
+import  -/  base-4.8.1.0:Prelude 518f762991bc287d78f21a73c974da1f
+import  -/  Data.Interface.TSequence e7c1c4592f1a02ccf97efe09e6a07e60
+  exports: 30011f52b7228743e59eb112c86ccb83
+  :| c61e394008b9bdc16ca29eb7a10bc17e
+  >< 430474553331ffd2d67a4ca8920795bd
+  TEmptyL 8e030811f3682aa0e59687e95986ede7
+  TSequence 700ffae603f8ab46db12fb2efd22dad5
+  tempty 4a6d1ef7a996ab8c9b0927d6fa434398
+  tsingleton 4f6df92211cfc50efea0da8c4340430d
+  tviewl 7d4188ec9181eb1c6a61292f35405bd5
+  |> 0d74591191a248291626d18337b7504e
+3e3f8dbf226132d96295a9f8213f3eb0
+  $fTSequenceCTQueue ::
+    Data.Interface.TSequence.TSequence q =>
+    Data.Interface.TSequence.TSequence (Data.CTQueue.CTQueue q)
+  DFunId[0]
+  {- Arity: 1, Strictness: <L,U(U,A,A,C(U),A,C(C1(U)),A)>m,
+     Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ (q :: (* -> * -> *) -> * -> * -> *)
+                      $dTSequence :: Data.Interface.TSequence.TSequence q.
+                  @ (Data.CTQueue.CTQueue q)
+                  (Data.CTQueue.$fTSequenceCTQueue_$ctempty @ q $dTSequence)
+                  (Data.CTQueue.$fTSequenceCTQueue_$ctsingleton @ q $dTSequence)
+                  (Data.CTQueue.$fTSequenceCTQueue_$c>< @ q $dTSequence)
+                  (Data.CTQueue.$fTSequenceCTQueue_$ctviewl @ q $dTSequence)
+                  (Data.CTQueue.$fTSequenceCTQueue_$ctviewr @ q $dTSequence)
+                  (Data.CTQueue.$fTSequenceCTQueue_$c|> @ q $dTSequence)
+                  (Data.CTQueue.$fTSequenceCTQueue_$c<| @ q $dTSequence) -}
+3e3f8dbf226132d96295a9f8213f3eb0
+  $fTSequenceCTQueue_$c<| ::
+    Data.Interface.TSequence.TSequence q =>
+    forall (c :: * -> * -> *) x y z.
+    c x y
+    -> Data.CTQueue.CTQueue q c y z -> Data.CTQueue.CTQueue q c x z
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(SLLLLLL),U(1*U,A,A,A,A,1*C1(C1(U)),A)><L,U><S,1*U>,
+     Unfolding: (\ @ (q :: (* -> * -> *) -> * -> * -> *)
+                   $dTSequence :: Data.Interface.TSequence.TSequence q
+                   @ (c :: * -> * -> *)
+                   @ x
+                   @ y
+                   @ z
+                   l :: c x y
+                   r :: Data.CTQueue.CTQueue q c y z ->
+                 case Data.Interface.TSequence.tempty
+                        @ q
+                        $dTSequence
+                        @ (Data.CTQueue.CTQueue q c)
+                        @ y of dt { DEFAULT ->
+                 case r of wild {
+                   Data.CTQueue.C0 dt1
+                   -> (Data.CTQueue.CN @ q @ c @ x @ y @ y l dt)
+                        `cast`
+                      (Data.CTQueue.CTQueue <q>_N <c>_N <x>_N dt1)_R
+                   Data.CTQueue.CN ipv0 ipv ipv1
+                   -> case Data.Interface.TSequence.|>
+                             @ q
+                             $dTSequence
+                             @ (Data.CTQueue.CTQueue q c)
+                             @ y
+                             @ y
+                             @ z
+                             dt
+                             wild of dt1 { DEFAULT ->
+                      Data.CTQueue.CN @ q @ c @ x @ z @ y l dt1 } } }) -}
+3e3f8dbf226132d96295a9f8213f3eb0
+  $fTSequenceCTQueue_$c>< ::
+    Data.Interface.TSequence.TSequence q =>
+    forall (c :: * -> * -> *) x y z.
+    Data.CTQueue.CTQueue q c x y
+    -> Data.CTQueue.CTQueue q c y z -> Data.CTQueue.CTQueue q c x z
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,1*U(A,A,A,A,A,1*C1(C1(U)),A)><S,1*U><S,1*U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ (q :: (* -> * -> *) -> * -> * -> *)
+                   $dTSequence :: Data.Interface.TSequence.TSequence q
+                   @ (c :: * -> * -> *)
+                   @ x
+                   @ y
+                   @ z
+                   ds :: Data.CTQueue.CTQueue q c x y
+                   ys :: Data.CTQueue.CTQueue q c y z ->
+                 case ds of wild {
+                   Data.CTQueue.C0 dt
+                   -> ys `cast` (Data.CTQueue.CTQueue <q>_N <c>_N (Sym dt) <z>_N)_R
+                   Data.CTQueue.CN ipv0 ipv ipv1
+                   -> case ys of wild1 {
+                        Data.CTQueue.C0 dt
+                        -> wild `cast` (Data.CTQueue.CTQueue <q>_N <c>_N <x>_N dt)_R
+                        Data.CTQueue.CN ipv2 ipv3 ipv4
+                        -> case Data.Interface.TSequence.|>
+                                  @ q
+                                  $dTSequence
+                                  @ (Data.CTQueue.CTQueue q c)
+                                  @ ipv0
+                                  @ y
+                                  @ z
+                                  ipv1
+                                  wild1 of dt { DEFAULT ->
+                           Data.CTQueue.CN @ q @ c @ x @ z @ ipv0 ipv dt } } }) -}
+3e3f8dbf226132d96295a9f8213f3eb0
+  $fTSequenceCTQueue_$ctempty ::
+    Data.Interface.TSequence.TSequence q =>
+    forall (c :: * -> * -> *) x. Data.CTQueue.CTQueue q c x x
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,A>,
+     Unfolding: InlineRule (1, True, True)
+                (\ @ (q :: (* -> * -> *) -> * -> * -> *)
+                   $dTSequence :: Data.Interface.TSequence.TSequence q ->
+                 Data.CTQueue.$WC0 @ q) -}
+3e3f8dbf226132d96295a9f8213f3eb0
+  $fTSequenceCTQueue_$ctsingleton ::
+    Data.Interface.TSequence.TSequence q =>
+    forall (c :: * -> * -> *) x y.
+    c x y -> Data.CTQueue.CTQueue q c x y
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(SLLLLLL),1*U(1*U,A,A,A,A,A,A)><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ (q :: (* -> * -> *) -> * -> * -> *)
+                   $dTSequence :: Data.Interface.TSequence.TSequence q
+                   @ (c :: * -> * -> *)
+                   @ x
+                   @ y
+                   a :: c x y ->
+                 case Data.Interface.TSequence.tempty
+                        @ q
+                        $dTSequence
+                        @ (Data.CTQueue.CTQueue q c)
+                        @ y of dt { DEFAULT ->
+                 Data.CTQueue.CN @ q @ c @ x @ y @ y a dt }) -}
+3e3f8dbf226132d96295a9f8213f3eb0
+  $fTSequenceCTQueue_$ctviewl ::
+    Data.Interface.TSequence.TSequence q =>
+    forall (c :: * -> * -> *) x y.
+    Data.CTQueue.CTQueue q c x y
+    -> Data.Interface.TSequence.TViewL (Data.CTQueue.CTQueue q) c x y
+  {- Arity: 2, Strictness: <L,U(A,A,A,C(U),A,C(C1(U)),A)><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ (q :: (* -> * -> *) -> * -> * -> *)
+                   $dTSequence :: Data.Interface.TSequence.TSequence q
+                   @ (c :: * -> * -> *)
+                   @ x
+                   @ y
+                   ds :: Data.CTQueue.CTQueue q c x y ->
+                 case ds of wild {
+                   Data.CTQueue.C0 dt
+                   -> (Data.Interface.TSequence.$WTEmptyL
+                         @ (Data.CTQueue.CTQueue q)
+                         @ c
+                         @ x)
+                        `cast`
+                      (Data.Interface.TSequence.TViewL
+                         <Data.CTQueue.CTQueue q>_R <c>_N <x>_N dt)_R
+                   Data.CTQueue.CN y1 h t
+                   -> Data.Interface.TSequence.:|
+                        @ (Data.CTQueue.CTQueue q)
+                        @ c
+                        @ x
+                        @ y
+                        @ y1
+                        h
+                        (Data.CTQueue.$fTSequenceCTQueue_linkAll
+                           @ q
+                           @ c
+                           @ y1
+                           @ y
+                           $dTSequence
+                           t) }) -}
+3e3f8dbf226132d96295a9f8213f3eb0
+  $fTSequenceCTQueue_$ctviewr ::
+    Data.Interface.TSequence.TSequence q =>
+    forall (c :: * -> * -> *) x y.
+    Data.CTQueue.CTQueue q c x y
+    -> Data.Interface.TSequence.TViewR (Data.CTQueue.CTQueue q) c x y
+  {- Arity: 2, Strictness: <L,U(U,A,A,C(U),A,C(C1(U)),A)><S,1*U> -}
+3e3f8dbf226132d96295a9f8213f3eb0
+  $fTSequenceCTQueue_$c|> ::
+    Data.Interface.TSequence.TSequence q =>
+    forall (c :: * -> * -> *) x y z.
+    Data.CTQueue.CTQueue q c x y
+    -> c y z -> Data.CTQueue.CTQueue q c x z
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S(SLLLLLL),U(1*U,A,A,A,A,1*C1(C1(U)),A)><S,1*U><L,U>,
+     Unfolding: (\ @ (q :: (* -> * -> *) -> * -> * -> *)
+                   $dTSequence :: Data.Interface.TSequence.TSequence q
+                   @ (c :: * -> * -> *)
+                   @ x
+                   @ y
+                   @ z
+                   l :: Data.CTQueue.CTQueue q c x y
+                   r :: c y z ->
+                 case l of wild {
+                   Data.CTQueue.C0 dt
+                   -> case Data.Interface.TSequence.tempty
+                             @ q
+                             $dTSequence
+                             @ (Data.CTQueue.CTQueue q c)
+                             @ z of dt1 { DEFAULT ->
+                      (Data.CTQueue.CN @ q @ c @ y @ z @ z r dt1)
+                        `cast`
+                      (Data.CTQueue.CTQueue <q>_N <c>_N (Sym dt) <z>_N)_R }
+                   Data.CTQueue.CN ipv0 ipv ipv1
+                   -> case Data.Interface.TSequence.tempty
+                             @ q
+                             $dTSequence
+                             @ (Data.CTQueue.CTQueue q c)
+                             @ z of dt { DEFAULT ->
+                      case Data.Interface.TSequence.|>
+                             @ q
+                             $dTSequence
+                             @ (Data.CTQueue.CTQueue q c)
+                             @ ipv0
+                             @ y
+                             @ z
+                             ipv1
+                             (Data.CTQueue.CN @ q @ c @ y @ z @ z r dt) of dt1 { DEFAULT ->
+                      Data.CTQueue.CN @ q @ c @ x @ z @ ipv0 ipv dt1 } } }) -}
+3e3f8dbf226132d96295a9f8213f3eb0
+  $fTSequenceCTQueue_linkAll ::
+    Data.Interface.TSequence.TSequence q =>
+    q (Data.CTQueue.CTQueue q c) a b -> Data.CTQueue.CTQueue q c a b
+  {- Arity: 2,
+     Strictness: <S(LLLC(S)LLL),U(A,A,A,C(U),A,C(C1(U)),A)><L,U> -}
+3e3f8dbf226132d96295a9f8213f3eb0
+  type role CTQueue nominal nominal nominal nominal
+  data CTQueue (q :: (* -> * -> *) -> * -> * -> *)
+               (c :: * -> * -> *)
+               x
+               y where
+    C0 :: CTQueue q c y y
+    CN :: (c x y1) -> (q (Data.CTQueue.CTQueue q c) y1 y)
+          -> CTQueue q c x y
+instance Data.Interface.TSequence.TSequence [Data.CTQueue.CTQueue]
+  = Data.CTQueue.$fTSequenceCTQueue
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

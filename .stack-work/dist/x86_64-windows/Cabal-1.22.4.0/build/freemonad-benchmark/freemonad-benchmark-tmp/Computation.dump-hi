@@ -1,0 +1,1450 @@
+
+==================== FINAL INTERFACE ====================
+2016-01-04 15:50:39.9071165 UTC
+
+interface main@main:Computation 7102
+  interface hash: 3392c783369751a51e2d467b2db4c09b
+  ABI hash: e54d7845af73419ca324eb3f999d9698
+  export-list hash: 52ba7e18025385811c9283697a5b072c
+  orphan hash: affea9b4093c2fac717c0bcfe50f8723
+  flag hash: 21311d5f2ead0e96d72cbb5f2df0da8a
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Computation.computation
+  Computation.computation2
+  Computation.get_
+  Computation.mtlComputation2
+  Computation.mtlComputationGeneral
+  Computation.mtlComputationGeneralInlinable
+  Computation.mtlComputationIO
+  Computation.mtlComputationId
+  Computation.myState
+  Computation.put_
+  Computation.stateInterp
+  Computation.streamingComp
+  Computation.streamingCompIO
+  Computation.streamingCompId
+  Computation.tcomputation
+  Computation.vl
+  Computation.vlComputation
+  Computation.State{Computation.State Computation.getState Computation.putState}
+module dependencies: Base
+package dependencies: Win32-2.3.1.0@Win32_JH0ECVJdFmmG0JOvttvGqi
+                      array-0.5.1.0@array_E0sTtauuKsGDLZoT7lTbgZ base-4.8.1.0
+                      containers-0.5.6.2@conta_LKCPrTJwOTOLk4OU37YmeN
+                      deepseq-1.4.1.1@deeps_LbCWUlehDDeLxurARKDH5o
+                      exceptions-0.8.0.2@excep_8GsEeHgaIks3pVGk6GaELJ
+                      free-vl-0.1.3@freev_J4QQawSJSgR1wtyx9RmpxN ghc-prim-0.4.0.0
+                      integer-gmp-1.0.0.0
+                      lifted-base-0.2.3.6@lifte_K3cQFA6mRg85rpDaA9numU
+                      mmorph-1.0.4@mmorp_8dNpUU8QFPe77rrwKAb20b
+                      monad-control-1.0.0.4@monad_3XCDr1mqlERGZgaxuwJF6b
+                      mtl-2.2.1@mtl_KMpng31YRYc5JfMWFZ3FCU
+                      resourcet-1.1.6@resou_Ic1TzDDmqYbFNHpzRsDmfS
+                      stm-2.4.4@stm_C1kFMnPqFjvDhFjgMZGUpr
+                      streaming-0.1.4.0@strea_FSz849cBl1PCe6X22prWwo
+                      time-1.5.0.1@time_ECG3PhVYxEUEM046TXoOWk
+                      transformers-0.4.2.0@trans_3eG64VdP2vzGjP6wJiCp5X
+                      transformers-base-0.4.4@trans_88TAFm21vtn2NrYUppy50c
+                      transient-0.1.1@trans_8wy0Qmgdmoq4PvxeKMd1Rs
+orphans: base-4.8.1.0:GHC.Base base-4.8.1.0:GHC.Float
+         stm-2.4.4@stm_C1kFMnPqFjvDhFjgMZGUpr:Control.Monad.STM
+         streaming-0.1.4.0@strea_FSz849cBl1PCe6X22prWwo:Streaming.Prelude
+         time-1.5.0.1@time_ECG3PhVYxEUEM046TXoOWk:Data.Time.Calendar.Gregorian
+         time-1.5.0.1@time_ECG3PhVYxEUEM046TXoOWk:Data.Time.Format.Parse
+         time-1.5.0.1@time_ECG3PhVYxEUEM046TXoOWk:Data.Time.LocalTime.LocalTime
+         transformers-0.4.2.0@trans_3eG64VdP2vzGjP6wJiCp5X:Control.Monad.Trans.Error
+family instance modules: base-4.8.1.0:Control.Applicative
+                         base-4.8.1.0:Data.Either base-4.8.1.0:Data.Functor.Identity
+                         base-4.8.1.0:Data.Monoid base-4.8.1.0:Data.Type.Equality
+                         base-4.8.1.0:Data.Void base-4.8.1.0:GHC.Exts
+                         base-4.8.1.0:GHC.Generics
+                         containers-0.5.6.2@conta_LKCPrTJwOTOLk4OU37YmeN:Data.IntMap.Base
+                         containers-0.5.6.2@conta_LKCPrTJwOTOLk4OU37YmeN:Data.IntSet.Base
+                         containers-0.5.6.2@conta_LKCPrTJwOTOLk4OU37YmeN:Data.Map.Base
+                         containers-0.5.6.2@conta_LKCPrTJwOTOLk4OU37YmeN:Data.Set.Base
+                         monad-control-1.0.0.4@monad_3XCDr1mqlERGZgaxuwJF6b:Control.Monad.Trans.Control
+                         resourcet-1.1.6@resou_Ic1TzDDmqYbFNHpzRsDmfS:Control.Monad.Trans.Resource.Internal
+import  -/  base-4.8.1.0:Control.Applicative a283901553892ce761385d18e455c2ce
+import  -/  base-4.8.1.0:Control.Monad dfea142d91349c4861427789d50d5b80
+import  -/  base-4.8.1.0:Data.Foldable 2e5acb797cfda6b3b7fabd7052abe290
+import  -/  base-4.8.1.0:GHC.Base a4939789b2cfd60b36ed163e56a623cd
+import  -/  base-4.8.1.0:GHC.Num 9f42750c866f5832ca565146bd660c60
+import  -/  base-4.8.1.0:Prelude 518f762991bc287d78f21a73c974da1f
+import  -/  free-vl-0.1.3@freev_J4QQawSJSgR1wtyx9RmpxN:Control.Monad.Free.VanLaarhovenE 1d548859c892b4905f1b7280918651d2
+import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
+import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
+import  -/  Base 4539c1b83b5f5c3bc3a6d6f65d743fb2
+  exports: 8763dd5bae4f40ca274cc839ac61fcf9
+  F 7cbec1f8f3194174f75be33e5b893b9f
+  MonadFree 214a069f1b90a7dfdbb158c26b94063c
+  get edd46a3bf87ed25d7f60115f6a119b71
+  put 6f9db9c5bb49679c383a52e34ba24ad8
+import  -/  mtl-2.2.1@mtl_KMpng31YRYc5JfMWFZ3FCU:Control.Monad.State.Class 866cc969991ca78f0f7f1fb5e32747fb
+import  -/  mtl-2.2.1@mtl_KMpng31YRYc5JfMWFZ3FCU:Control.Monad.State.Strict 16e19c2160f5c460b12f21dcee6c363c
+import  -/  mtl-2.2.1@mtl_KMpng31YRYc5JfMWFZ3FCU:Control.Monad.Trans c51150e77f1800dfbae9c5f48d899e6e
+import  -/  streaming-0.1.4.0@strea_FSz849cBl1PCe6X22prWwo:Streaming 6ae0afab408880e229212a0832df022e
+import  -/  streaming-0.1.4.0@strea_FSz849cBl1PCe6X22prWwo:Streaming.Internal 4963dab9d6f5965042cc7c3b3f5762dd
+import  -/  streaming-0.1.4.0@strea_FSz849cBl1PCe6X22prWwo:Streaming.Prelude 3ca9f794c0888263ff60470a686881e6
+import  -/  transformers-0.4.2.0@trans_3eG64VdP2vzGjP6wJiCp5X:Control.Monad.Trans.Class ced5621141aaa24ab095912d5a649dcc
+import  -/  transformers-0.4.2.0@trans_3eG64VdP2vzGjP6wJiCp5X:Control.Monad.Trans.State.Strict aa0a3204163086a4ba65dedf0c3a2fad
+import  -/  transient-0.1.1@trans_8wy0Qmgdmoq4PvxeKMd1Rs:Transient.Base d947a32f0d5d3e3b15191008da27ffcc
+99bd2d052d36ac00740516f72598a400
+  $s$fApplicativeStateT2 ::
+    GHC.Base.Applicative
+      (Control.Monad.Trans.State.Strict.StateT
+         GHC.Types.Int Data.Functor.Identity.Identity)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (Control.Monad.Trans.State.Strict.StateT
+                       GHC.Types.Int Data.Functor.Identity.Identity)
+                  Computation.$s$fApplicativeStateT3
+                  (Control.Monad.Trans.State.Strict.$fApplicativeStateT_$cpure
+                     @ GHC.Types.Int
+                     @ Data.Functor.Identity.Identity
+                     Computation.$s$fApplicativeStateT3
+                     Data.Functor.Identity.$fFunctorIdentity
+                     Data.Functor.Identity.$fMonadIdentity)
+                  (Control.Monad.Trans.State.Strict.$fApplicativeStateT_$c<*>
+                     @ GHC.Types.Int
+                     @ Data.Functor.Identity.Identity
+                     Computation.$s$fApplicativeStateT3
+                     Data.Functor.Identity.$fFunctorIdentity
+                     Data.Functor.Identity.$fMonadIdentity)
+                  (Control.Monad.Trans.State.Strict.$fApplicativeStateT_$c*>
+                     @ GHC.Types.Int
+                     @ Data.Functor.Identity.Identity
+                     Computation.$s$fApplicativeStateT3
+                     Data.Functor.Identity.$fFunctorIdentity
+                     Data.Functor.Identity.$fMonadIdentity)
+                  (Control.Monad.Trans.State.Strict.$fApplicativeStateT_$c<*
+                     @ GHC.Types.Int
+                     @ Data.Functor.Identity.Identity
+                     Computation.$s$fApplicativeStateT3
+                     Data.Functor.Identity.$fFunctorIdentity
+                     Data.Functor.Identity.$fMonadIdentity) -}
+34c1b8ee077c9576e4fb177390b0bbf9
+  $s$fApplicativeStateT3 ::
+    GHC.Base.Functor
+      (Control.Monad.Trans.State.Strict.StateT
+         GHC.Types.Int Data.Functor.Identity.Identity)
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True)
+                (Computation.$s$fApplicativeStateT_$s$fFunctorStateT1
+                   @ GHC.Types.Int) -}
+686acd39f3ce2b28d7cfb91b6b7eb2fd
+  $s$fApplicativeStateT_$s$fFunctorStateT1 ::
+    GHC.Base.Functor
+      (Control.Monad.Trans.State.Strict.StateT
+         s Data.Functor.Identity.Identity)
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun: @ s.
+                  @ (Control.Monad.Trans.State.Strict.StateT
+                       s Data.Functor.Identity.Identity)
+                  (Control.Monad.Trans.State.Strict.$fFunctorStateT_$cfmap
+                     @ s
+                     @ Data.Functor.Identity.Identity
+                     Data.Functor.Identity.$fFunctorIdentity)
+                  (Control.Monad.Trans.State.Strict.$fFunctorStateT_$c<$
+                     @ s
+                     @ Data.Functor.Identity.Identity
+                     Data.Functor.Identity.$fFunctorIdentity) -}
+480a922baa7a33155ad63383dd95a41f
+  $s$fMonadStateT2 ::
+    GHC.Base.Monad
+      (Control.Monad.Trans.State.Strict.StateT
+         GHC.Types.Int Data.Functor.Identity.Identity)
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ (Control.Monad.Trans.State.Strict.StateT
+                       GHC.Types.Int Data.Functor.Identity.Identity)
+                  Computation.$s$fMonadStateT3
+                  (Control.Monad.Trans.State.Strict.$fMonadStateT_$c>>=
+                     @ GHC.Types.Int
+                     @ Data.Functor.Identity.Identity
+                     Computation.$s$fMonadStateT3
+                     Data.Functor.Identity.$fMonadIdentity)
+                  (Control.Monad.Trans.State.Strict.$fMonadStateT_$c>>
+                     @ GHC.Types.Int
+                     @ Data.Functor.Identity.Identity
+                     Computation.$s$fMonadStateT3
+                     Data.Functor.Identity.$fMonadIdentity)
+                  (Control.Monad.Trans.State.Strict.$fMonadStateT_$creturn
+                     @ GHC.Types.Int
+                     @ Data.Functor.Identity.Identity
+                     Computation.$s$fMonadStateT3
+                     Data.Functor.Identity.$fMonadIdentity)
+                  Computation.$s$fMonadStateT_$s$fMonadStateT_$cfail1 -}
+31f7de930c737ef2733eb57354cb90d9
+  $s$fMonadStateT3 ::
+    GHC.Base.Applicative
+      (Control.Monad.Trans.State.Strict.StateT
+         GHC.Types.Int Data.Functor.Identity.Identity)
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True)
+                Computation.$s$fApplicativeStateT2 -}
+0e54283de15695d219b950f34c7d1b51
+  $s$fMonadStateT_$s$fMonadStateT_$cfail1 ::
+    GHC.Base.String
+    -> Control.Monad.Trans.State.Strict.StateT
+         GHC.Types.Int Data.Functor.Identity.Identity a
+  {- Arity: 2, Strictness: <B,U><B,A>b,
+     Unfolding: InlineRule (1, True, True)
+                (\ @ a21 str :: GHC.Base.String eta :: GHC.Types.Int ->
+                 Data.Functor.Identity.$fMonadIdentity_$s$dmfail
+                   @ (a21, GHC.Types.Int)
+                   str)
+                  `cast`
+                (forall a21.
+                 <GHC.Base.String>_R
+                 ->_R Sym (Control.Monad.Trans.State.Strict.NTCo:StateT[0]
+                               <GHC.Types.Int>_N <Data.Functor.Identity.Identity>_R <a21>_N)) -}
+cd1f5a9c8f559fbf4f633140189a3256
+  $sgetSData2 ::
+    GHC.Prim.Proxy# GHC.Types.Int -> Data.Typeable.Internal.TypeRep
+  {- Arity: 1, Strictness: <L,A>m,
+     Unfolding: InlineRule (1, True, True)
+                (\ wild :: GHC.Prim.Proxy# GHC.Types.Int ->
+                 Computation.$sgetSData3) -}
+916799d70b83f048f6be51e033e5bdc9
+  $sgetSData3 :: Data.Typeable.Internal.TypeRep
+  {- Strictness: m,
+     Unfolding: (Data.Typeable.Internal.TypeRep
+                   __word 16287469036901857884
+                   __word 16587023596664995632
+                   Computation.$sgetSData_wild
+                   (GHC.Types.[] @ Data.Typeable.Internal.KindRep)
+                   (GHC.Types.[] @ Data.Typeable.Internal.TypeRep)) -}
+a9e14e82b3fe2d4a1fea7daa05c5d078
+  $sgetSData_wild :: Data.Typeable.Internal.TyCon
+  {- Strictness: m,
+     Unfolding: (Data.Typeable.Internal.TyCon
+                   __word 16287469036901857884
+                   __word 16587023596664995632
+                   Computation.$sgetSData_ww2
+                   Computation.$sgetSData_ww3
+                   Computation.$sgetSData_ww4) -}
+13c2e1a30576d243d4c1e7a1eac8c573
+  $sgetSData_ww2 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "ghc-prim"#) -}
+183aaebc94c3afc2c91e6fa4dcc71482
+  $sgetSData_ww3 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "GHC.Types"#) -}
+c8e4d39a9c9bba7ce8c1bdf514f515fb
+  $sgetSData_ww4 :: GHC.Base.String
+  {- Unfolding: (GHC.CString.unpackCString# "Int"#) -}
+2074addba389258d7445bb276764e505
+  $wa ::
+    GHC.Base.Monad m =>
+    GHC.Prim.Int# -> GHC.Types.Int -> m ((), GHC.Types.Int)
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S,U(A,C(C1(U)),A,C(U),A)><S,1*U><L,U>, Inline: [0] -}
+b9774efbf8d36f6b51ebb4c9cdc414e4
+  $wa1 ::
+    GHC.Base.Monad m =>
+    GHC.Prim.Int# -> GHC.Types.Int -> m ((), GHC.Types.Int)
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S,U(A,C(C1(U)),A,C(U),A)><L,U><L,U>, Inline: [0],
+     Unfolding: (\ @ (m :: * -> *)
+                   w :: GHC.Base.Monad m
+                   ww :: GHC.Prim.Int#
+                   w1 :: GHC.Types.Int ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.># 1 ww) of wild {
+                   GHC.Types.False
+                   -> let {
+                        a21 :: GHC.Types.Int -> m ((), GHC.Types.Int)
+                          {- Arity: 1, Strictness: <L,U>,
+                             Unfolding: InlineRule (1, True, False)
+                                        (\ eta :: GHC.Types.Int ->
+                                         GHC.Base.return
+                                           @ m
+                                           w
+                                           @ ((), GHC.Types.Int)
+                                           (GHC.Tuple.(), eta)) -}
+                        = \ eta :: GHC.Types.Int ->
+                          GHC.Base.return @ m w @ ((), GHC.Types.Int) (GHC.Tuple.(), eta)
+                      } in
+                      let {
+                        lvl2 :: (GHC.Types.Int, GHC.Types.Int) -> m ((), GHC.Types.Int)
+                          {- Arity: 1 -}
+                        = \ ds :: (GHC.Types.Int, GHC.Types.Int) ->
+                          case ds of wild1 { (,) a22 s' ->
+                          case a22 of wild2 { GHC.Types.I# x ->
+                          GHC.Base.return
+                            @ m
+                            w
+                            @ ((), GHC.Types.Int)
+                            (GHC.Tuple.(), GHC.Types.I# (GHC.Prim.+# x 1)) } }
+                      } in
+                      letrec {
+                        a22 :: GHC.Prim.Int# -> GHC.Types.Int -> m ((), GHC.Types.Int)
+                          {- Arity: 2, Strictness: <L,U><L,U> -}
+                        = \ x :: GHC.Prim.Int# eta :: GHC.Types.Int ->
+                          let {
+                            eta1 :: Control.Monad.Trans.State.Strict.StateT GHC.Types.Int m ()
+                            = case GHC.Prim.tagToEnum#
+                                     @ GHC.Types.Bool
+                                     (GHC.Prim.==# x ww) of wild1 {
+                                GHC.Types.False
+                                -> (a22 (GHC.Prim.+# x 1))
+                                     `cast`
+                                   (Sym (Control.Monad.Trans.State.Strict.NTCo:StateT[0]
+                                             <GHC.Types.Int>_N <m>_R <()>_N))
+                                GHC.Types.True
+                                -> a21
+                                     `cast`
+                                   (Sym (Control.Monad.Trans.State.Strict.NTCo:StateT[0]
+                                             <GHC.Types.Int>_N <m>_R <()>_N)) }
+                          } in
+                          GHC.Base.>>=
+                            @ m
+                            w
+                            @ ((), GHC.Types.Int)
+                            @ ((), GHC.Types.Int)
+                            (GHC.Base.>>=
+                               @ m
+                               w
+                               @ (GHC.Types.Int, GHC.Types.Int)
+                               @ ((), GHC.Types.Int)
+                               (GHC.Base.return @ m w @ (GHC.Types.Int, GHC.Types.Int) (eta, eta))
+                               lvl2)
+                            (\ ds :: ((), GHC.Types.Int) ->
+                             case ds of wild1 { (,) a23 s' ->
+                             eta1
+                               `cast`
+                             (Control.Monad.Trans.State.Strict.NTCo:StateT[0]
+                                  <GHC.Types.Int>_N <m>_R <()>_N)
+                               s' })
+                      } in
+                      a22 1 w1
+                   GHC.Types.True
+                   -> GHC.Base.return
+                        @ m
+                        w
+                        @ ((), GHC.Types.Int)
+                        (GHC.Tuple.(), w1) }) -}
+7382890ccccb0671070ee7a923d7f6f4
+  $wa2 ::
+    GHC.Prim.Int#
+    -> GHC.Types.Int
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, ((), GHC.Types.Int) #)
+  {- Arity: 3, HasNoCafRefs, Strictness: <L,U><L,U(U)><L,U>,
+     Inline: [0],
+     Unfolding: (\ ww :: GHC.Prim.Int#
+                   w :: GHC.Types.Int
+                   w1 :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.># 1 ww) of wild {
+                   GHC.Types.False
+                   -> case w of ww1 { GHC.Types.I# ww2 ->
+                      letrec {
+                        $wa6 :: GHC.Prim.Int#
+                                -> GHC.Prim.Int#
+                                -> GHC.Prim.State# GHC.Prim.RealWorld
+                                -> (# GHC.Prim.State# GHC.Prim.RealWorld, ((), GHC.Types.Int) #)
+                          {- Arity: 3, Strictness: <L,U><L,U><L,U>, Inline: [0] -}
+                        = \ w2 :: GHC.Prim.Int#
+                            ww3 :: GHC.Prim.Int#
+                            w3 :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                          case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.==# w2 ww) of wild1 {
+                            GHC.Types.False -> $wa6 (GHC.Prim.+# w2 1) (GHC.Prim.+# ww3 1) w3
+                            GHC.Types.True
+                            -> (# w3, (GHC.Tuple.(), GHC.Types.I# (GHC.Prim.+# ww3 1)) #) }
+                      } in
+                      $wa6 1 ww2 w1 }
+                   GHC.Types.True -> (# w1, (GHC.Tuple.(), w) #) }) -}
+b66379c7a93618349a04aed18ea67208
+  $wa3 :: GHC.Prim.Int# -> GHC.Types.Int -> (# (), GHC.Types.Int #)
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><L,U(U)>, Inline: [0],
+     Unfolding: (\ ww :: GHC.Prim.Int# w :: GHC.Types.Int ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.># 1 ww) of wild {
+                   GHC.Types.False
+                   -> case w of ww1 { GHC.Types.I# ww2 ->
+                      letrec {
+                        $wa6 :: GHC.Prim.Int# -> GHC.Prim.Int# -> (# (), GHC.Types.Int #)
+                          {- Arity: 2, Strictness: <L,U><L,U>, Inline: [0] -}
+                        = \ w1 :: GHC.Prim.Int# ww3 :: GHC.Prim.Int# ->
+                          case GHC.Prim.tagToEnum#
+                                 @ GHC.Types.Bool
+                                 (GHC.Prim.==# w1 ww) of wild1 {
+                            GHC.Types.False -> $wa6 (GHC.Prim.+# w1 1) (GHC.Prim.+# ww3 1)
+                            GHC.Types.True
+                            -> (# GHC.Tuple.(), GHC.Types.I# (GHC.Prim.+# ww3 1) #) }
+                      } in
+                      $wa6 1 ww2 }
+                   GHC.Types.True -> (# GHC.Tuple.(), w #) }) -}
+5b36b66adae6f0d8528a6acf4f2b2e54
+  $wa4 ::
+    Control.Monad.Free.VanLaarhovenE.HasEffect
+      effects (Computation.State GHC.Types.Int) =>
+    GHC.Prim.Int#
+    -> forall (m :: * -> *).
+       GHC.Base.Monad m =>
+       Control.Monad.Free.VanLaarhovenE.Effects effects m -> m ()
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,C(U(1*U,1*C1(U)))><L,U><L,U(U(U,U,U,U,U),U,U,U,U)>,
+     Inline: [0],
+     Unfolding: (\ @ (effects :: [(* -> *) -> *])
+                   w :: Control.Monad.Free.VanLaarhovenE.HasEffect
+                          effects (Computation.State GHC.Types.Int)
+                   ww :: GHC.Prim.Int#
+                   @ (m :: * -> *)
+                   w1 :: GHC.Base.Monad m ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.># 1 ww) of wild {
+                   GHC.Types.False
+                   -> letrec {
+                        a21 :: GHC.Prim.Int#
+                               -> forall (m1 :: * -> *).
+                                  GHC.Base.Monad m1 =>
+                                  Control.Monad.Free.VanLaarhovenE.Effects effects m1 -> m1 ()
+                          {- Arity: 3, Strictness: <L,U><S(LC(C(S))LLL),U(U,U,U,U,U)><L,U> -}
+                        = \ x :: GHC.Prim.Int#
+                            @ (m1 :: * -> *)
+                            eta :: GHC.Base.Monad m1
+                            eta1 :: Control.Monad.Free.VanLaarhovenE.Effects effects m1 ->
+                          let {
+                            lvl2 :: m1 ()
+                            = case GHC.Prim.tagToEnum#
+                                     @ GHC.Types.Bool
+                                     (GHC.Prim.==# x ww) of wild1 {
+                                GHC.Types.False -> a21 (GHC.Prim.+# x 1) @ m1 eta eta1
+                                GHC.Types.True
+                                -> GHC.Base.pure
+                                     @ m1
+                                     (GHC.Base.$p1Monad @ m1 eta)
+                                     @ ()
+                                     GHC.Tuple.() }
+                          } in
+                          GHC.Base.>>=
+                            @ m1
+                            eta
+                            @ ()
+                            @ ()
+                            (let {
+                               lvl3 :: Computation.State GHC.Types.Int m1
+                               = w `cast`
+                                 (Control.Monad.Free.VanLaarhovenE.NTCo:HasEffect[0]
+                                      <effects>_N <Computation.State GHC.Types.Int>_N)
+                                   @ m1
+                                   eta1
+                             } in
+                             GHC.Base.>>=
+                               @ m1
+                               eta
+                               @ GHC.Types.Int
+                               @ ()
+                               (case lvl3 of wild1 { Computation.State ds ds1 -> ds })
+                               (\ a22 :: GHC.Types.Int ->
+                                case a22 of wild1 { GHC.Types.I# x1 ->
+                                case lvl3 of wild2 { Computation.State ds ds1 ->
+                                ds1 (GHC.Types.I# (GHC.Prim.+# x1 1)) } }))
+                            (\ a22 :: () -> lvl2)
+                      } in
+                      a21 1 @ m w1
+                   GHC.Types.True
+                   -> let {
+                        x :: m ()
+                        = GHC.Base.pure @ m (GHC.Base.$p1Monad @ m w1) @ () GHC.Tuple.()
+                      } in
+                      \ ds :: Control.Monad.Free.VanLaarhovenE.Effects effects m ->
+                      x }) -}
+25734572949c3bbe40bdcd73f1903b87
+  $wcomputation :: Base.MonadFree Base.F m => GHC.Prim.Int# -> m ()
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(SL),U(U(U,U,U,U,U),C(U))><L,U>,
+     Inline: INLINABLE[0],
+     Unfolding: <stable> (\ @ (m :: * -> *)
+                            w :: Base.MonadFree Base.F m
+                            ww :: GHC.Prim.Int# ->
+                          let {
+                            $dMonad :: GHC.Base.Monad m = Base.$p1MonadFree @ Base.F @ m w
+                          } in
+                          let {
+                            f1 :: m () -> m () -> m () = GHC.Base.>> @ m $dMonad @ () @ ()
+                          } in
+                          let {
+                            z :: m () = GHC.Base.return @ m $dMonad @ () GHC.Tuple.()
+                          } in
+                          letrec {
+                            go :: [GHC.Types.Int] -> m () {- Arity: 1 -}
+                            = \ ds :: [GHC.Types.Int] ->
+                              case ds of wild {
+                                [] -> z
+                                : y ys
+                                -> f1
+                                     (GHC.Base.>>=
+                                        @ m
+                                        $dMonad
+                                        @ GHC.Types.Int
+                                        @ ()
+                                        (Base.get @ m w)
+                                        (\ s :: GHC.Types.Int ->
+                                         case s of wild1 { GHC.Types.I# x ->
+                                         Base.put @ m w (GHC.Types.I# (GHC.Prim.+# x 1)) }))
+                                     (go ys) }
+                          } in
+                          go
+                            (case GHC.Prim.tagToEnum#
+                                    @ GHC.Types.Bool
+                                    (GHC.Prim.># 1 ww) of wild {
+                               GHC.Types.False
+                               -> letrec {
+                                    go1 :: GHC.Prim.Int# -> [GHC.Types.Int] {- Arity: 1 -}
+                                    = \ x :: GHC.Prim.Int# ->
+                                      GHC.Types.:
+                                        @ GHC.Types.Int
+                                        (GHC.Types.I# x)
+                                        (case GHC.Prim.tagToEnum#
+                                                @ GHC.Types.Bool
+                                                (GHC.Prim.==# x ww) of wild1 {
+                                           GHC.Types.False -> go1 (GHC.Prim.+# x 1)
+                                           GHC.Types.True -> GHC.Types.[] @ GHC.Types.Int })
+                                  } in
+                                  go1 1
+                               GHC.Types.True -> GHC.Types.[] @ GHC.Types.Int })) -}
+ac65875ae6471dd822783802495a7877
+  $wcomputation2 :: Base.MonadFree Base.F m => GHC.Prim.Int# -> m ()
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(SL),U(U(U,U,U,U,U),C(U))><S,1*U>, Inline: [0] -}
+b0616f7637e7dc90d9eaba70751881d8
+  $wmtlComputationGeneralInlinable ::
+    GHC.Base.Monad m =>
+    GHC.Prim.Int# -> GHC.Types.Int -> m ((), GHC.Types.Int)
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S,U(A,C(C1(U)),A,C(U),A)><L,U><L,U>,
+     Inline: INLINABLE[0],
+     Unfolding: <stable> (\ @ (m :: * -> *)
+                            w :: GHC.Base.Monad m
+                            ww :: GHC.Prim.Int#
+                            w1 :: GHC.Types.Int ->
+                          let {
+                            a21 :: GHC.Types.Int -> m ((), GHC.Types.Int) {- Arity: 1 -}
+                            = \ eta :: GHC.Types.Int ->
+                              GHC.Base.return @ m w @ ((), GHC.Types.Int) (GHC.Tuple.(), eta)
+                          } in
+                          letrec {
+                            go :: [GHC.Types.Int]
+                                  -> Control.Monad.Trans.State.Strict.StateT GHC.Types.Int m ()
+                              {- Arity: 1 -}
+                            = \ ds :: [GHC.Types.Int] ->
+                              case ds of wild {
+                                []
+                                -> a21
+                                     `cast`
+                                   (Sym (Control.Monad.Trans.State.Strict.NTCo:StateT[0]
+                                             <GHC.Types.Int>_N <m>_R <()>_N))
+                                : y ys
+                                -> let {
+                                     eta :: Control.Monad.Trans.State.Strict.StateT
+                                              GHC.Types.Int m ()
+                                     = go ys
+                                   } in
+                                   (\ eta1 :: GHC.Types.Int ->
+                                    GHC.Base.>>=
+                                      @ m
+                                      w
+                                      @ ((), GHC.Types.Int)
+                                      @ ((), GHC.Types.Int)
+                                      (GHC.Base.>>=
+                                         @ m
+                                         w
+                                         @ (GHC.Types.Int, GHC.Types.Int)
+                                         @ ((), GHC.Types.Int)
+                                         (GHC.Base.return
+                                            @ m
+                                            w
+                                            @ (GHC.Types.Int, GHC.Types.Int)
+                                            (eta1, eta1))
+                                         (\ ds1 :: (GHC.Types.Int, GHC.Types.Int) ->
+                                          case ds1 of wild1 { (,) a22 s' ->
+                                          case a22 of wild2 { GHC.Types.I# x ->
+                                          GHC.Base.return
+                                            @ m
+                                            w
+                                            @ ((), GHC.Types.Int)
+                                            (GHC.Tuple.(), GHC.Types.I# (GHC.Prim.+# x 1)) } }))
+                                      (\ ds1 :: ((), GHC.Types.Int) ->
+                                       case ds1 of wild1 { (,) a22 s' ->
+                                       eta
+                                         `cast`
+                                       (Control.Monad.Trans.State.Strict.NTCo:StateT[0]
+                                            <GHC.Types.Int>_N <m>_R <()>_N)
+                                         s' }))
+                                     `cast`
+                                   (Sym (Control.Monad.Trans.State.Strict.NTCo:StateT[0]
+                                             <GHC.Types.Int>_N <m>_R <()>_N)) }
+                          } in
+                          (go
+                             (case GHC.Prim.tagToEnum#
+                                     @ GHC.Types.Bool
+                                     (GHC.Prim.># 1 ww) of wild {
+                                GHC.Types.False
+                                -> letrec {
+                                     go1 :: GHC.Prim.Int# -> [GHC.Types.Int] {- Arity: 1 -}
+                                     = \ x :: GHC.Prim.Int# ->
+                                       GHC.Types.:
+                                         @ GHC.Types.Int
+                                         (GHC.Types.I# x)
+                                         (case GHC.Prim.tagToEnum#
+                                                 @ GHC.Types.Bool
+                                                 (GHC.Prim.==# x ww) of wild1 {
+                                            GHC.Types.False -> go1 (GHC.Prim.+# x 1)
+                                            GHC.Types.True -> GHC.Types.[] @ GHC.Types.Int })
+                                   } in
+                                   go1 1
+                                GHC.Types.True -> GHC.Types.[] @ GHC.Types.Int }))
+                            `cast`
+                          (Control.Monad.Trans.State.Strict.NTCo:StateT[0]
+                               <GHC.Types.Int>_N <m>_R <()>_N)
+                            w1) -}
+828dee472c9488046b00c14446e4af7a
+  $wstreamingComp ::
+    GHC.Base.Monad m =>
+    GHC.Types.Int
+    -> (# Control.Monad.Trans.State.Strict.StateT
+            GHC.Types.Int
+            m
+            (Streaming.Internal.Stream
+               (Streaming.Prelude.Of GHC.Types.Int)
+               (Control.Monad.Trans.State.Strict.StateT GHC.Types.Int m)
+               ()) #)
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <L,U(A,C(C1(U)),A,C(U),A)><L,U(U)>, Inline: [0],
+     Unfolding: (\ @ (m :: * -> *)
+                   w :: GHC.Base.Monad m
+                   w1 :: GHC.Types.Int ->
+                 let {
+                   lvl2 :: ((), GHC.Types.Int)
+                           -> m (Streaming.Internal.Stream
+                                   (Streaming.Prelude.Of GHC.Types.Int)
+                                   (Control.Monad.Trans.State.Strict.StateT GHC.Types.Int m)
+                                   (),
+                                 GHC.Types.Int)
+                     {- Arity: 1 -}
+                   = \ ds :: ((), GHC.Types.Int) ->
+                     case ds of wild { (,) a21 s' ->
+                     GHC.Base.return
+                       @ m
+                       w
+                       @ (Streaming.Internal.Stream
+                            (Streaming.Prelude.Of GHC.Types.Int)
+                            (Control.Monad.Trans.State.Strict.StateT GHC.Types.Int m)
+                            (),
+                          GHC.Types.Int)
+                       (Streaming.Internal.Return
+                          @ (Streaming.Prelude.Of GHC.Types.Int)
+                          @ (Control.Monad.Trans.State.Strict.StateT GHC.Types.Int m)
+                          @ ()
+                          a21,
+                        s') }
+                 } in
+                 (# (\ eta :: GHC.Types.Int ->
+                     GHC.Base.>>=
+                       @ m
+                       w
+                       @ ((), GHC.Types.Int)
+                       @ (Streaming.Internal.Stream
+                            (Streaming.Prelude.Of GHC.Types.Int)
+                            (Control.Monad.Trans.State.Strict.StateT GHC.Types.Int m)
+                            (),
+                          GHC.Types.Int)
+                       (case w1 of ww { GHC.Types.I# ww1 ->
+                        Computation.$wa1 @ m w ww1 eta })
+                       lvl2)
+                      `cast`
+                    (Sym (Control.Monad.Trans.State.Strict.NTCo:StateT[0]
+                              <GHC.Types.Int>_N
+                              <m>_R
+                              <Streaming.Internal.Stream
+                                 (Streaming.Prelude.Of GHC.Types.Int)
+                                 (Control.Monad.Trans.State.Strict.StateT GHC.Types.Int m)
+                                 ()>_N)) #)) -}
+3decab332e2d8dc5a626795983689e7a
+  $wstreamingCompIO ::
+    GHC.Types.Int
+    -> (# Control.Monad.Trans.State.Strict.StateT
+            GHC.Types.Int
+            GHC.Types.IO
+            (Streaming.Internal.Stream
+               (Streaming.Prelude.Of GHC.Types.Int)
+               (Control.Monad.Trans.State.Strict.StateT
+                  GHC.Types.Int GHC.Types.IO)
+               ()) #)
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U(U)>, Inline: [0],
+     Unfolding: (\ w :: GHC.Types.Int ->
+                 (# (\ eta :: GHC.Types.Int
+                       s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                     case w of wild1 { GHC.Types.I# y ->
+                     case GHC.Prim.tagToEnum#
+                            @ GHC.Types.Bool
+                            (GHC.Prim.># 1 y) of wild {
+                       GHC.Types.False
+                       -> case eta of ww { GHC.Types.I# ww1 ->
+                          letrec {
+                            $wa6 :: GHC.Prim.Int#
+                                    -> GHC.Prim.Int#
+                                    -> GHC.Prim.State# GHC.Prim.RealWorld
+                                    -> (# GHC.Prim.State# GHC.Prim.RealWorld, ((), GHC.Types.Int) #)
+                              {- Arity: 3, Strictness: <L,U><L,U><L,U>, Inline: [0] -}
+                            = \ w1 :: GHC.Prim.Int#
+                                ww2 :: GHC.Prim.Int#
+                                w2 :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                              case GHC.Prim.tagToEnum#
+                                     @ GHC.Types.Bool
+                                     (GHC.Prim.==# w1 y) of wild2 {
+                                GHC.Types.False -> $wa6 (GHC.Prim.+# w1 1) (GHC.Prim.+# ww2 1) w2
+                                GHC.Types.True
+                                -> (# w2, (GHC.Tuple.(), GHC.Types.I# (GHC.Prim.+# ww2 1)) #) }
+                          } in
+                          case $wa6 1 ww1 s of ds1 { (#,#) ipv ipv1 ->
+                          case ipv1 of wild2 { (,) a21 s' ->
+                          (# ipv,
+                             (Streaming.Internal.Return
+                                @ (Streaming.Prelude.Of GHC.Types.Int)
+                                @ (Control.Monad.Trans.State.Strict.StateT
+                                     GHC.Types.Int GHC.Types.IO)
+                                @ ()
+                                a21,
+                              s') #) } } }
+                       GHC.Types.True -> (# s, (Computation.streamingCompIO1, eta) #) } })
+                      `cast`
+                    (Trans
+                         (<GHC.Types.Int>_R
+                          ->_R Sym (GHC.Types.NTCo:IO[0]
+                                        <(Streaming.Internal.Stream
+                                            (Streaming.Prelude.Of GHC.Types.Int)
+                                            (Control.Monad.Trans.State.Strict.StateT
+                                               GHC.Types.Int GHC.Types.IO)
+                                            (),
+                                          GHC.Types.Int)>_R))
+                         (Sym (Control.Monad.Trans.State.Strict.NTCo:StateT[0]
+                                   <GHC.Types.Int>_N
+                                   <GHC.Types.IO>_R
+                                   <Streaming.Internal.Stream
+                                      (Streaming.Prelude.Of GHC.Types.Int)
+                                      (Control.Monad.Trans.State.Strict.StateT
+                                         GHC.Types.Int GHC.Types.IO)
+                                      ()>_N))) #)) -}
+f57bffaccc812bfc1d5149a83a1e93eb
+  $wtcomputation ::
+    GHC.Prim.Int#
+    -> (# Control.Monad.Trans.State.Lazy.StateT
+            Transient.Base.EventF GHC.Types.IO (GHC.Base.Maybe ()) #)
+  {- Arity: 1, Strictness: <L,U>, Inline: [0],
+     Unfolding: (\ ww :: GHC.Prim.Int# ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.># 1 ww) of wild {
+                   GHC.Types.False
+                   -> letrec {
+                        $wgo :: GHC.Prim.Int#
+                                -> (# Control.Monad.Trans.State.Lazy.StateT
+                                        Transient.Base.EventF GHC.Types.IO (GHC.Base.Maybe ()) #)
+                          {- Arity: 1, Strictness: <L,U>, Inline: [0] -}
+                        = \ w :: GHC.Prim.Int# ->
+                          let {
+                            k :: Transient.Base.TransientIO ()
+                            = case GHC.Prim.tagToEnum#
+                                     @ GHC.Types.Bool
+                                     (GHC.Prim.==# w ww) of wild1 {
+                                GHC.Types.False
+                                -> case $wgo (GHC.Prim.+# w 1) of ww1 { (##) ww2 ->
+                                   Transient.Base.Transient @ () ww2 }
+                                GHC.Types.True -> Computation.tcomputation_n }
+                          } in
+                          Transient.Base.$w$c>>=
+                            @ ()
+                            @ ()
+                            Computation.tcomputation2
+                            (\ ds :: () -> k)
+                      } in
+                      $wgo 1
+                   GHC.Types.True
+                   -> (# Computation.tcomputation1
+                           `cast`
+                         (Trans
+                              (<Transient.Base.EventF>_R
+                               ->_R Sym (GHC.Types.NTCo:IO[0]
+                                             <(GHC.Base.Maybe (), Transient.Base.EventF)>_R))
+                              (Sym (Control.Monad.Trans.State.Lazy.NTCo:StateT[0]
+                                        <Transient.Base.EventF>_N
+                                        <GHC.Types.IO>_R
+                                        <GHC.Base.Maybe ()>_N))) #) }) -}
+263bad025ff137d7b9a21b92f073a1f9
+  type role State nominal representational
+  data State s (m :: * -> *)
+    = State {getState :: m s, putState :: s -> m ()}
+46ef0574e2ba70f4acbd177f81520cf9
+  computation ::
+    (GHC.Base.Monad m, Base.MonadFree Base.F m) =>
+    GHC.Types.Int -> m ()
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,A><S(SL),U(U(U,U,U,U,U),C(U))><S,1*U(U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ (m :: * -> *)
+                   w :: GHC.Base.Monad m
+                   w1 :: Base.MonadFree Base.F m
+                   w2 :: GHC.Types.Int ->
+                 case w2 of ww { GHC.Types.I# ww1 ->
+                 Computation.$wcomputation @ m w1 ww1 }) -}
+e7e204892b9a8057544d5a960a8e82a7
+  computation2 ::
+    (GHC.Base.Monad m, Base.MonadFree Base.F m) =>
+    GHC.Types.Int -> m ()
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,A><S(SL),U(U(U,U,U,U,U),C(U))><S(S),1*U(1*U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ (m :: * -> *)
+                   w :: GHC.Base.Monad m
+                   w1 :: Base.MonadFree Base.F m
+                   w2 :: GHC.Types.Int ->
+                 case w2 of ww { GHC.Types.I# ww1 ->
+                 Computation.$wcomputation2 @ m w1 ww1 }) -}
+40ffcd3371c6b6578f94b8309c6bbf91
+  getState :: Computation.State s m -> m s
+  RecSel Computation.State
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SL),1*U(1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ s @ (m :: * -> *) ds :: Computation.State s m ->
+                 case ds of wild { Computation.State ds1 ds2 -> ds1 }) -}
+4236f88db155013b0374d665e3f0d725
+  get_ ::
+    Control.Monad.Free.VanLaarhovenE.HasEffect
+      effects (Computation.State s) =>
+    Control.Monad.Free.VanLaarhovenE.Free effects s
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <C(S(SL)),1*C1(U(1*U,A))><L,A><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Computation.get_1
+                  `cast`
+                (forall (effects :: [(* -> *) -> *]) s.
+                 <Control.Monad.Free.VanLaarhovenE.HasEffect
+                    effects (Computation.State s)>_R
+                 ->_R Sym (Control.Monad.Free.VanLaarhovenE.NTCo:Free[0]
+                               <effects>_N <s>_N)) -}
+7ac53902438d5231076f7df2d7c6593a
+  get_1 ::
+    Control.Monad.Free.VanLaarhovenE.HasEffect
+      effects (Computation.State s) =>
+    forall (m :: * -> *).
+    GHC.Base.Monad m =>
+    Control.Monad.Free.VanLaarhovenE.Effects effects m -> m s
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <C(S(SL)),1*C1(U(1*U,A))><L,A><L,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ @ (effects :: [(* -> *) -> *])
+                   @ s
+                   $dHasEffect :: Control.Monad.Free.VanLaarhovenE.HasEffect
+                                    effects (Computation.State s)
+                   @ (m :: * -> *)
+                   $dMonad :: GHC.Base.Monad m
+                   eta :: Control.Monad.Free.VanLaarhovenE.Effects effects m ->
+                 case $dHasEffect
+                        `cast`
+                      (Control.Monad.Free.VanLaarhovenE.NTCo:HasEffect[0]
+                           <effects>_N <Computation.State s>_N)
+                        @ m
+                        eta of wild { Computation.State ds ds1 ->
+                 ds }) -}
+ff8e641bf6d9e5d7eaddcb1c3de56d89
+  mtlComputation1 ::
+    GHC.Base.Monad m =>
+    GHC.Types.Int -> GHC.Types.Int -> m ((), GHC.Types.Int)
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S,U(A,C(C1(U)),A,C(U),A)><S(S),1*U(1*U)><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ (m :: * -> *)
+                   w :: GHC.Base.Monad m
+                   w1 :: GHC.Types.Int
+                   w2 :: GHC.Types.Int ->
+                 case w1 of ww { GHC.Types.I# ww1 ->
+                 Computation.$wa @ m w ww1 w2 }) -}
+63fbdcf498b034af3c0d966e45ea6e10
+  mtlComputation2 ::
+    GHC.Base.Monad m =>
+    GHC.Types.Int
+    -> Control.Monad.Trans.State.Strict.StateT GHC.Types.Int m ()
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S,U(A,C(C1(U)),A,C(U),A)><S(S),1*U(1*U)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Computation.mtlComputation1
+                  `cast`
+                (forall (m :: * -> *).
+                 <GHC.Base.Monad m>_R
+                 ->_R <GHC.Types.Int>_R
+                 ->_R Sym (Control.Monad.Trans.State.Strict.NTCo:StateT[0]
+                               <GHC.Types.Int>_N <m>_R <()>_N)) -}
+f2c27c18de15db7d33f4486512fde686
+  mtlComputationGeneral ::
+    GHC.Base.Monad m =>
+    GHC.Types.Int
+    -> Control.Monad.Trans.State.Strict.StateT GHC.Types.Int m ()
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S,U(A,C(C1(U)),A,C(U),A)><S,1*U(U)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Computation.mtlComputationGeneral1
+                  `cast`
+                (forall (m :: * -> *).
+                 <GHC.Base.Monad m>_R
+                 ->_R <GHC.Types.Int>_R
+                 ->_R Sym (Control.Monad.Trans.State.Strict.NTCo:StateT[0]
+                               <GHC.Types.Int>_N <m>_R <()>_N)) -}
+0c0544d5a6230ea4e46f17b45bf3caf6
+  mtlComputationGeneral1 ::
+    GHC.Base.Monad m =>
+    GHC.Types.Int -> GHC.Types.Int -> m ((), GHC.Types.Int)
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S,U(A,C(C1(U)),A,C(U),A)><S,1*U(U)><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ (m :: * -> *)
+                   w :: GHC.Base.Monad m
+                   w1 :: GHC.Types.Int
+                   w2 :: GHC.Types.Int ->
+                 case w1 of ww { GHC.Types.I# ww1 ->
+                 Computation.$wa1 @ m w ww1 w2 }) -}
+fc249886c6c40086bbdfb1e87f22eeba
+  mtlComputationGeneralInlinable ::
+    GHC.Base.Monad m =>
+    GHC.Types.Int
+    -> Control.Monad.Trans.State.Strict.StateT GHC.Types.Int m ()
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <S,U(A,C(C1(U)),A,C(U),A)><S,1*U(U)><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ (m :: * -> *)
+                   w :: GHC.Base.Monad m
+                   w1 :: GHC.Types.Int
+                   w2 :: GHC.Types.Int ->
+                 case w1 of ww { GHC.Types.I# ww1 ->
+                 Computation.$wmtlComputationGeneralInlinable @ m w ww1 w2 })
+                  `cast`
+                (forall (m :: * -> *).
+                 <GHC.Base.Monad m>_R
+                 ->_R <GHC.Types.Int>_R
+                 ->_R Sym (Control.Monad.Trans.State.Strict.NTCo:StateT[0]
+                               <GHC.Types.Int>_N <m>_R <()>_N)) -}
+ae79f098c3de156b2497a9985dee98e5
+  mtlComputationIO ::
+    GHC.Types.Int
+    -> Control.Monad.Trans.State.Strict.StateT
+         GHC.Types.Int GHC.Types.IO ()
+  {- Arity: 3, HasNoCafRefs, Strictness: <S,1*U(U)><L,U(U)><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Computation.mtlComputationIO1
+                  `cast`
+                (<GHC.Types.Int>_R
+                 ->_R Trans
+                          (<GHC.Types.Int>_R
+                           ->_R Sym (GHC.Types.NTCo:IO[0] <((), GHC.Types.Int)>_R))
+                          (Sym (Control.Monad.Trans.State.Strict.NTCo:StateT[0]
+                                    <GHC.Types.Int>_N <GHC.Types.IO>_R <()>_N))) -}
+8200f4f3ffe61054f2522ef5aa390669
+  mtlComputationIO1 ::
+    GHC.Types.Int
+    -> GHC.Types.Int
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, ((), GHC.Types.Int) #)
+  {- Arity: 3, HasNoCafRefs, Strictness: <S,1*U(U)><L,U(U)><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ w :: GHC.Types.Int
+                   w1 :: GHC.Types.Int
+                   w2 :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case w of ww { GHC.Types.I# ww1 -> Computation.$wa2 ww1 w1 w2 }) -}
+fb4793f709e67159b1eca979d5dc4911
+  mtlComputationId ::
+    GHC.Types.Int
+    -> Control.Monad.Trans.State.Strict.State GHC.Types.Int ()
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U(U)><L,U(U)>m,
+     Unfolding: InlineRule (0, True, True)
+                Computation.mtlComputationId1
+                  `cast`
+                (<GHC.Types.Int>_R
+                 ->_R Sym (Control.Monad.Trans.State.Strict.NTCo:StateT[0]
+                               <GHC.Types.Int>_N <Data.Functor.Identity.Identity>_R <()>_N)) -}
+2c41baff855813d68719d445962ba885
+  mtlComputationId1 ::
+    GHC.Types.Int
+    -> GHC.Types.Int
+    -> Data.Functor.Identity.Identity ((), GHC.Types.Int)
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U(U)><L,U(U)>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ w :: GHC.Types.Int w1 :: GHC.Types.Int ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case Computation.$wa3 ww1 w1 of ww2 { (#,#) ww3 ww4 ->
+                 (ww3, ww4)
+                   `cast`
+                 (Sym (Data.Functor.Identity.NTCo:Identity[0]
+                           <((), GHC.Types.Int)>_R)) } }) -}
+3d537965d95ea36a896a960924996b3b
+  myState ::
+    Computation.State s (Control.Monad.Trans.State.Strict.State s)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (\ @ s ->
+                 Computation.State
+                   @ s
+                   @ (Control.Monad.Trans.State.Strict.State s)
+                   (Computation.myState2 @ s)
+                     `cast`
+                   (Trans
+                        (<s>_R
+                         ->_R Sym (Data.Functor.Identity.NTCo:Identity[0] <(s, s)>_R))
+                        (Sym (Control.Monad.Trans.State.Strict.NTCo:StateT[0]
+                                  <s>_N <Data.Functor.Identity.Identity>_R <s>_N)))
+                   (Computation.myState1 @ s)
+                     `cast`
+                   (<s>_R
+                    ->_R Trans
+                             (<s>_R
+                              ->_R Sym (Data.Functor.Identity.NTCo:Identity[0] <((), s)>_R))
+                             (Sym (Control.Monad.Trans.State.Strict.NTCo:StateT[0]
+                                       <s>_N <Data.Functor.Identity.Identity>_R <()>_N)))) -}
+5d4e6ddb95b781eca2b004d01715c406
+  myState1 :: s -> s -> ((), s)
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><L,A>m,
+     Unfolding: InlineRule (2, True, True)
+                (\ @ s eta :: s eta1 :: s -> (GHC.Tuple.(), eta)) -}
+c8856d3c11917daa55412a03b6058c26
+  myState2 :: s -> (s, s)
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ s eta :: s -> (eta, eta)) -}
+585a29def51b246aa5402bb231174b23
+  putState :: Computation.State s m -> s -> m ()
+  RecSel Computation.State
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LS),1*U(A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ s @ (m :: * -> *) ds :: Computation.State s m ->
+                 case ds of wild { Computation.State ds1 ds2 -> ds2 }) -}
+a6ca3631b21247bba5216d86383b54b4
+  put_ ::
+    Control.Monad.Free.VanLaarhovenE.HasEffect
+      effects (Computation.State s) =>
+    s -> Control.Monad.Free.VanLaarhovenE.Free effects ()
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <C(S(LC(S))),1*C1(U(A,1*C1(U)))><L,U><L,A><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Computation.put_1
+                  `cast`
+                (forall s (effects :: [(* -> *) -> *]).
+                 <Control.Monad.Free.VanLaarhovenE.HasEffect
+                    effects (Computation.State s)>_R
+                 ->_R <s>_R
+                 ->_R Sym (Control.Monad.Free.VanLaarhovenE.NTCo:Free[0]
+                               <effects>_N <()>_N)) -}
+d9a5a7de897d2e9cad1f0338788986de
+  put_1 ::
+    Control.Monad.Free.VanLaarhovenE.HasEffect
+      effects (Computation.State s) =>
+    s
+    -> forall (m :: * -> *).
+       GHC.Base.Monad m =>
+       Control.Monad.Free.VanLaarhovenE.Effects effects m -> m ()
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <C(S(LC(S))),1*C1(U(A,1*C1(U)))><L,U><L,A><L,U>,
+     Unfolding: InlineRule (4, True, False)
+                (\ @ s
+                   @ (effects :: [(* -> *) -> *])
+                   $dHasEffect :: Control.Monad.Free.VanLaarhovenE.HasEffect
+                                    effects (Computation.State s)
+                   s1 :: s
+                   @ (m :: * -> *)
+                   eta :: GHC.Base.Monad m
+                   eta1 :: Control.Monad.Free.VanLaarhovenE.Effects effects m ->
+                 case $dHasEffect
+                        `cast`
+                      (Control.Monad.Free.VanLaarhovenE.NTCo:HasEffect[0]
+                           <effects>_N <Computation.State s>_N)
+                        @ m
+                        eta1 of wild { Computation.State ds ds1 ->
+                 ds1 s1 }) -}
+b6706d8ed23abc16fe3afa8e7989c656
+  stateInterp ::
+    Control.Monad.Free.VanLaarhovenE.Effects
+      '[Computation.State s] (Control.Monad.Trans.State.Strict.State s)
+  {- HasNoCafRefs,
+     Unfolding: (\ @ s ->
+                 Control.Monad.Free.VanLaarhovenE.ConsE
+                   @ '[Computation.State s]
+                   @ (Control.Monad.Trans.State.Strict.State s)
+                   @ (Computation.State s)
+                   @ '[]
+                   @~ <'[Computation.State s]>_N
+                   (Computation.myState @ s)
+                   (Control.Monad.Free.VanLaarhovenE.$WEmptyE
+                      @ (Control.Monad.Trans.State.Strict.State s))) -}
+6cd9deac779ac2a2a87538575a59606c
+  streamingComp ::
+    GHC.Base.Monad m =>
+    GHC.Types.Int
+    -> Streaming.Internal.Stream
+         (Streaming.Prelude.Of GHC.Types.Int)
+         (Control.Monad.Trans.State.Strict.StateT GHC.Types.Int m)
+         ()
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <L,U(A,C(C1(U)),A,C(U),A)><L,U(U)>m2,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ @ (m :: * -> *) w :: GHC.Base.Monad m w1 :: GHC.Types.Int ->
+                 case Computation.$wstreamingComp @ m w w1 of ww { (##) ww1 ->
+                 Streaming.Internal.Effect
+                   @ (Streaming.Prelude.Of GHC.Types.Int)
+                   @ (Control.Monad.Trans.State.Strict.StateT GHC.Types.Int m)
+                   @ ()
+                   ww1 }) -}
+91ca8f4f9ac9112b7535a2e35b68acc0
+  streamingCompIO ::
+    GHC.Types.Int
+    -> Streaming.Internal.Stream
+         (Streaming.Prelude.Of GHC.Types.Int)
+         (Control.Monad.Trans.State.Strict.StateT
+            GHC.Types.Int GHC.Types.IO)
+         ()
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U(U)>m2,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ w :: GHC.Types.Int ->
+                 case Computation.$wstreamingCompIO w of ww { (##) ww1 ->
+                 Streaming.Internal.Effect
+                   @ (Streaming.Prelude.Of GHC.Types.Int)
+                   @ (Control.Monad.Trans.State.Strict.StateT
+                        GHC.Types.Int GHC.Types.IO)
+                   @ ()
+                   ww1 }) -}
+39ae82491973db8d02a8e3507a2cf388
+  streamingCompIO1 ::
+    Streaming.Internal.Stream
+      (Streaming.Prelude.Of GHC.Types.Int)
+      (Control.Monad.Trans.State.Strict.StateT
+         GHC.Types.Int GHC.Types.IO)
+      ()
+  {- HasNoCafRefs,
+     Unfolding: (Streaming.Internal.Return
+                   @ (Streaming.Prelude.Of GHC.Types.Int)
+                   @ (Control.Monad.Trans.State.Strict.StateT
+                        GHC.Types.Int GHC.Types.IO)
+                   @ ()
+                   GHC.Tuple.()) -}
+4c27744c73435ea737ed65a1bec801d9
+  streamingCompId ::
+    GHC.Types.Int
+    -> Streaming.Internal.Stream
+         (Streaming.Prelude.Of GHC.Types.Int)
+         (Control.Monad.Trans.State.Strict.State GHC.Types.Int)
+         ()
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U(U)>m2,
+     Unfolding: InlineRule (1, True, False)
+                (\ x :: GHC.Types.Int ->
+                 Streaming.Internal.Effect
+                   @ (Streaming.Prelude.Of GHC.Types.Int)
+                   @ (Control.Monad.Trans.State.Strict.State GHC.Types.Int)
+                   @ ()
+                   (\ eta :: GHC.Types.Int ->
+                    case (Computation.mtlComputationId1 x eta)
+                           `cast`
+                         (Data.Functor.Identity.NTCo:Identity[0]
+                              <((), GHC.Types.Int)>_R) of wild { (,) a21 s' ->
+                    (Streaming.Internal.Return
+                       @ (Streaming.Prelude.Of GHC.Types.Int)
+                       @ (Control.Monad.Trans.State.Strict.State GHC.Types.Int)
+                       @ ()
+                       a21,
+                     s')
+                      `cast`
+                    (Sym (Data.Functor.Identity.NTCo:Identity[0]
+                              <(Streaming.Internal.Stream
+                                  (Streaming.Prelude.Of GHC.Types.Int)
+                                  (Control.Monad.Trans.State.Strict.State GHC.Types.Int)
+                                  (),
+                                GHC.Types.Int)>_R)) })
+                     `cast`
+                   (Sym (Control.Monad.Trans.State.Strict.NTCo:StateT[0]
+                             <GHC.Types.Int>_N
+                             <Data.Functor.Identity.Identity>_R
+                             <Streaming.Internal.Stream
+                                (Streaming.Prelude.Of GHC.Types.Int)
+                                (Control.Monad.Trans.State.Strict.State GHC.Types.Int)
+                                ()>_N))) -}
+37d6e6790e6314aac9f5a3e08a008d9e
+  tcomputation :: GHC.Types.Int -> Transient.Base.TransIO ()
+  {- Arity: 1, Strictness: <S,1*U(U)>m, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ w :: GHC.Types.Int ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case Computation.$wtcomputation ww1 of ww2 { (##) ww3 ->
+                 Transient.Base.Transient @ () ww3 } }) -}
+fc14de6126dafc05bf79afd434565a7c
+  tcomputation1 ::
+    Transient.Base.EventF
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          (GHC.Base.Maybe (), Transient.Base.EventF) #)
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ eta :: Transient.Base.EventF
+                   s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 (# s, (Computation.tcomputation_a18, eta) #)) -}
+c1132b97d5547d8eaf7de577cd33f1c3
+  tcomputation2 :: Transient.Base.TransientIO ()
+  {- Unfolding: (case Transient.Base.$w$c>>=
+                        @ GHC.Types.Int
+                        @ ()
+                        Computation.tcomputation4
+                        Computation.tcomputation3 of ww { (##) ww1 ->
+                 Transient.Base.Transient @ () ww1 }) -}
+95d51479805f0d969b90e836c7b729e9
+  tcomputation3 :: GHC.Types.Int -> Transient.Base.TransIO ()
+  {- Arity: 1,
+     Unfolding: (\ s :: GHC.Types.Int ->
+                 case s of wild { GHC.Types.I# x ->
+                 let {
+                   a21 :: GHC.Prim.Int# = GHC.Prim.+# x 1
+                 } in
+                 let {
+                   x1 :: GHC.Types.Int {- Strictness: m -} = GHC.Types.I# a21
+                 } in
+                 case Transient.Base.$w$cstate
+                        @ ()
+                        (\ s1 :: Transient.Base.EventF ->
+                         (GHC.Tuple.(),
+                          case s1 of wild1 { Transient.Base.EventF a180 b0 ds ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ->
+                          Transient.Base.EventF
+                            @ a180
+                            @ b0
+                            ds
+                            ds1
+                            ds2
+                            (Transient.Base.$w$sgo1
+                               @ ()
+                               __word 16287469036901857884
+                               __word 16587023596664995632
+                               Computation.$sgetSData_wild
+                               (GHC.Types.[] @ Data.Typeable.Internal.KindRep)
+                               (GHC.Types.[] @ Data.Typeable.Internal.TypeRep)
+                               x1
+                                 `cast`
+                               (UnivCo mkUnsafeCo representational GHC.Types.Int Transient.Base.SData)
+                               ds3)
+                            ds4
+                            ds5
+                            ds6
+                            ds7
+                            ds8
+                            ds9 })) of ww { (##) ww1 ->
+                 Transient.Base.Transient @ () ww1 } }) -}
+c6b073fa4f8ba8a3565bd299f81bc113
+  tcomputation4 :: Transient.Base.TransIO GHC.Types.Int
+  {- Unfolding: (Transient.Base.Transient
+                   @ GHC.Types.Int
+                   Computation.tcomputation5
+                     `cast`
+                   (Trans
+                        (<Transient.Base.EventF>_R
+                         ->_R Sym (GHC.Types.NTCo:IO[0]
+                                       <(GHC.Base.Maybe GHC.Types.Int, Transient.Base.EventF)>_R))
+                        (Sym (Control.Monad.Trans.State.Lazy.NTCo:StateT[0]
+                                  <Transient.Base.EventF>_N
+                                  <GHC.Types.IO>_R
+                                  <GHC.Base.Maybe GHC.Types.Int>_N)))) -}
+7f0aef8ad112323d2a627a25845c5044
+  tcomputation5 ::
+    Transient.Base.EventF
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          (GHC.Base.Maybe GHC.Types.Int, Transient.Base.EventF) #)
+  {- Arity: 2,
+     Unfolding: (\ eta :: Transient.Base.EventF
+                   s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case (Computation.tcomputation6
+                         `cast`
+                       (Control.Monad.Trans.State.Lazy.NTCo:StateT[0]
+                            <Transient.Base.EventF>_N
+                            <GHC.Types.IO>_R
+                            <GHC.Base.Maybe GHC.Types.Int>_N)
+                         eta)
+                        `cast`
+                      (GHC.Types.NTCo:IO[0]
+                           <(GHC.Base.Maybe GHC.Types.Int, Transient.Base.EventF)>_R)
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case ipv1 of wild1 { (,) a21 s' ->
+                 case s' of wild2 { Transient.Base.EventF a190 b0 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ->
+                 case Transient.Base.$wpoly_go10
+                        @ ()
+                        __word 4313520017658125458
+                        __word 8150179479964312380
+                        ds5 of wild3 {
+                   GHC.Base.Nothing
+                   -> case a21 of wild4 {
+                        GHC.Base.Nothing -> (# ipv, (Computation.tcomputation_a1, wild2) #)
+                        GHC.Base.Just ipv2 -> ds1 }
+                   GHC.Base.Just x
+                   -> case x `cast`
+                           (UnivCo mkUnsafeCo representational Transient.Base.SData Transient.Base.RemoteStatus) of wild4 {
+                        Transient.Base.WasRemote
+                        -> (# ipv, (GHC.Base.Nothing @ GHC.Types.Int, wild2) #)
+                        Transient.Base.NoRemote
+                        -> case a21 of wild5 {
+                             GHC.Base.Nothing -> (# ipv, (Computation.tcomputation_a1, wild2) #)
+                             GHC.Base.Just ipv2 -> ds1 } } } } } }) -}
+5c64a180c72886a72a5d987df8eedf86
+  tcomputation6 ::
+    Control.Monad.Trans.State.Lazy.StateT
+      Transient.Base.EventF GHC.Types.IO (GHC.Base.Maybe GHC.Types.Int)
+  {- Unfolding: (Transient.Base.getSessionData
+                   @ (Control.Monad.Trans.State.Lazy.StateT
+                        Transient.Base.EventF GHC.Types.IO)
+                   @ GHC.Types.Int
+                   Transient.Base.$s$fMonadStatesStateT0
+                   Computation.$sgetSData2
+                     `cast`
+                   (Sym (Data.Typeable.Internal.NTCo:Typeable[0]
+                             <*>_N <GHC.Types.Int>_N))) -}
+a2ba0176fa8d9421e4d27029ebaaa9e0
+  tcomputation_a1 :: GHC.Base.Maybe GHC.Types.Int
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Base.Just
+                   @ GHC.Types.Int
+                   Computation.tcomputation_x) -}
+1f9aa6a416d64fe1c7942fdc31aa9e30
+  tcomputation_a18 :: GHC.Base.Maybe ()
+  {- HasNoCafRefs, Unfolding: (GHC.Base.Just @ () GHC.Tuple.()) -}
+25cc9b32c976068ea2c58cedac593b78
+  tcomputation_n :: Transient.Base.TransIO ()
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Transient.Base.Transient
+                   @ ()
+                   Computation.tcomputation1
+                     `cast`
+                   (Trans
+                        (<Transient.Base.EventF>_R
+                         ->_R Sym (GHC.Types.NTCo:IO[0]
+                                       <(GHC.Base.Maybe (), Transient.Base.EventF)>_R))
+                        (Sym (Control.Monad.Trans.State.Lazy.NTCo:StateT[0]
+                                  <Transient.Base.EventF>_N
+                                  <GHC.Types.IO>_R
+                                  <GHC.Base.Maybe ()>_N)))) -}
+6356578ed5fd9ee633008148781cd8a8
+  tcomputation_x :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 1) -}
+5e40980a291bab9d06bf714cd3ac7697
+  vl ::
+    Control.Monad.Free.VanLaarhovenE.Free
+      '[Computation.State GHC.Types.Int] a
+    -> Control.Monad.Trans.State.Strict.State GHC.Types.Int a
+  {- Arity: 1, Strictness: <C(C(S)),1*C1(C1(U))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a21
+                   program :: Control.Monad.Free.VanLaarhovenE.Free
+                                '[Computation.State GHC.Types.Int] a21 ->
+                 program
+                   `cast`
+                 (Control.Monad.Free.VanLaarhovenE.NTCo:Free[0]
+                      <'[Computation.State GHC.Types.Int]>_N <a21>_N)
+                   @ (Control.Monad.Trans.State.Strict.StateT
+                        GHC.Types.Int Data.Functor.Identity.Identity)
+                   Computation.$s$fMonadStateT2
+                   (Computation.stateInterp @ GHC.Types.Int)) -}
+0691f5be76e267de5344cbe292b5a0fe
+  vlComputation ::
+    Control.Monad.Free.VanLaarhovenE.HasEffect
+      effects (Computation.State GHC.Types.Int) =>
+    GHC.Types.Int -> Control.Monad.Free.VanLaarhovenE.Free effects ()
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,C(U(1*U,1*C1(U)))><S,1*U(U)><L,U(U(U,U,U,U,U),U,U,U,U)>,
+     Unfolding: InlineRule (0, True, True)
+                Computation.vlComputation1
+                  `cast`
+                (forall (effects :: [(* -> *) -> *]).
+                 <Control.Monad.Free.VanLaarhovenE.HasEffect
+                    effects (Computation.State GHC.Types.Int)>_R
+                 ->_R <GHC.Types.Int>_R
+                 ->_R Sym (Control.Monad.Free.VanLaarhovenE.NTCo:Free[0]
+                               <effects>_N <()>_N)) -}
+91dce0a5b0303bdfbb28461a0174eeba
+  vlComputation1 ::
+    Control.Monad.Free.VanLaarhovenE.HasEffect
+      effects (Computation.State GHC.Types.Int) =>
+    GHC.Types.Int
+    -> forall (m :: * -> *).
+       GHC.Base.Monad m =>
+       Control.Monad.Free.VanLaarhovenE.Effects effects m -> m ()
+  {- Arity: 3, HasNoCafRefs,
+     Strictness: <L,C(U(1*U,1*C1(U)))><S,1*U(U)><L,U(U(U,U,U,U,U),U,U,U,U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ @ (effects :: [(* -> *) -> *])
+                   w :: Control.Monad.Free.VanLaarhovenE.HasEffect
+                          effects (Computation.State GHC.Types.Int)
+                   w1 :: GHC.Types.Int
+                   @ (m :: * -> *)
+                   w2 :: GHC.Base.Monad m ->
+                 case w1 of ww { GHC.Types.I# ww1 ->
+                 Computation.$wa4 @ effects w ww1 @ m w2 }) -}
+"SPEC/Computation $fApplicativeStateT @ Int @ Identity" [ALWAYS] forall $dFunctor :: GHC.Base.Functor
+                                                                                       (Control.Monad.Trans.State.Strict.StateT
+                                                                                          GHC.Types.Int
+                                                                                          Data.Functor.Identity.Identity)
+                                                                        $dFunctor1 :: GHC.Base.Functor
+                                                                                        Data.Functor.Identity.Identity
+                                                                        $dMonad :: GHC.Base.Monad
+                                                                                     Data.Functor.Identity.Identity
+  Control.Monad.Trans.State.Strict.$fApplicativeStateT @ GHC.Types.Int
+                                                       @ Data.Functor.Identity.Identity
+                                                       $dFunctor
+                                                       $dFunctor1
+                                                       $dMonad
+  = Computation.$s$fApplicativeStateT2
+"SPEC/Computation $fFunctorStateT _ @ Identity" [ALWAYS] forall @ s
+                                                                $dFunctor :: GHC.Base.Functor
+                                                                               Data.Functor.Identity.Identity
+  Control.Monad.Trans.State.Strict.$fFunctorStateT @ s
+                                                   @ Data.Functor.Identity.Identity
+                                                   $dFunctor
+  = Computation.$s$fApplicativeStateT_$s$fFunctorStateT1 @ s
+"SPEC/Computation $fMonadStateT @ Int @ Identity" [ALWAYS] forall $dApplicative :: GHC.Base.Applicative
+                                                                                     (Control.Monad.Trans.State.Strict.StateT
+                                                                                        GHC.Types.Int
+                                                                                        Data.Functor.Identity.Identity)
+                                                                  $dMonad :: GHC.Base.Monad
+                                                                               Data.Functor.Identity.Identity
+  Control.Monad.Trans.State.Strict.$fMonadStateT @ GHC.Types.Int
+                                                 @ Data.Functor.Identity.Identity
+                                                 $dApplicative
+                                                 $dMonad
+  = Computation.$s$fMonadStateT2
+"SPEC/Computation $fMonadStateT_$cfail @ Int @ Identity" [ALWAYS] forall $dApplicative :: GHC.Base.Applicative
+                                                                                            (Control.Monad.Trans.State.Strict.StateT
+                                                                                               GHC.Types.Int
+                                                                                               Data.Functor.Identity.Identity)
+                                                                         $dMonad :: GHC.Base.Monad
+                                                                                      Data.Functor.Identity.Identity
+  Control.Monad.Trans.State.Strict.$fMonadStateT_$cfail @ GHC.Types.Int
+                                                        @ Data.Functor.Identity.Identity
+                                                        $dApplicative
+                                                        $dMonad
+  = Computation.$s$fMonadStateT_$s$fMonadStateT_$cfail1
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

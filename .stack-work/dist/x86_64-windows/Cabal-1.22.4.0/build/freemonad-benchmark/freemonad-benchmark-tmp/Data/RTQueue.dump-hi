@@ -1,0 +1,334 @@
+
+==================== FINAL INTERFACE ====================
+2016-01-04 15:35:12.4083606 UTC
+
+interface main@main:Data.RTQueue 7102
+  interface hash: 50ada2fda9d886449ce501fdd1307652
+  ABI hash: 9241fad1b591977eae356d3076977386
+  export-list hash: 1ced411ae201e1d83f90cfdeb743f2d9
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 5dd7e6b7243d508a302f015157cf6024
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Data.RTQueue.queue
+  Data.RTQueue.revAppend
+  Data.RTQueue.rotate
+  Data.RTQueue.RTQueue{Data.RTQueue.RQ}
+module dependencies: Data.Interface.Sequence
+                     Data.Interface.TSequence Data.TConsList Data.TSnocList
+package dependencies: base-4.8.1.0* ghc-prim-0.4.0.0
+                      integer-gmp-1.0.0.0
+orphans: base-4.8.1.0:GHC.Base base-4.8.1.0:GHC.Float
+         main@main:Data.Interface.TSequence
+family instance modules: base-4.8.1.0:Control.Applicative
+                         base-4.8.1.0:Data.Either base-4.8.1.0:Data.Monoid
+                         base-4.8.1.0:Data.Type.Equality base-4.8.1.0:GHC.Generics
+import  -/  base-4.8.1.0:Prelude 518f762991bc287d78f21a73c974da1f
+import  -/  Data.Interface.TSequence e7c1c4592f1a02ccf97efe09e6a07e60
+  exports: 30011f52b7228743e59eb112c86ccb83
+  :| c61e394008b9bdc16ca29eb7a10bc17e
+  TEmptyL 8e030811f3682aa0e59687e95986ede7
+  TSequence 700ffae603f8ab46db12fb2efd22dad5
+  tempty 4a6d1ef7a996ab8c9b0927d6fa434398
+  tsingleton 4f6df92211cfc50efea0da8c4340430d
+  tviewl 7d4188ec9181eb1c6a61292f35405bd5
+  |> 0d74591191a248291626d18337b7504e
+import  -/  Data.TConsList cbd494317de229fc43c010eb007540c9
+  exports: 1c89dc2b0a9466dfc951fd535685418f
+  CNil 7b96b627fe48bdb79c71d5de924fa279
+  Cons ed9186264e29c7b49df79f948393f9f8
+  TConsList ce1fe5e5143345a2ca937d831a92a122
+import  -/  Data.TSnocList 1cddfc473ad20556d8d48902dffa57de
+  exports: 27d0591bf9510461be7a7c4302c51a18
+  SNil 5666f1e08306d3d26da645ecc17c0d4d
+  Snoc a134f4920f246828eaee2fb37e78b57d
+  TSnocList 2c9451c4ab284b4a815f2bf8617a1df8
+a3f23ca4a1a56adfe78d7624a01aade6
+  $fTSequenceRTQueue ::
+    Data.Interface.TSequence.TSequence Data.RTQueue.RTQueue
+  DFunId[0]
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Data.RTQueue.RTQueue
+                  Data.RTQueue.$fTSequenceRTQueue_$ctempty
+                  Data.RTQueue.$fTSequenceRTQueue_$ctsingleton
+                  Data.RTQueue.$fTSequenceRTQueue_$c><
+                  Data.RTQueue.$fTSequenceRTQueue_$ctviewl
+                  Data.RTQueue.$fTSequenceRTQueue_$ctviewr
+                  Data.RTQueue.$fTSequenceRTQueue_$c|>
+                  Data.RTQueue.$fTSequenceRTQueue_$c<| -}
+a3f23ca4a1a56adfe78d7624a01aade6
+  $fTSequenceRTQueue1 ::
+    Data.Interface.TSequence.TViewL Data.RTQueue.RTQueue c x y
+  {- Strictness: b -}
+34907c06ce77cdf58d1730846b6bf01a
+  $fTSequenceRTQueue2 :: Data.TSnocList.TSnocList c x x
+  {- HasNoCafRefs,
+     Unfolding: (\ @ (c :: * -> * -> *) @ x ->
+                 Data.TSnocList.SNil @ c @ x @ x @~ <x>_N) -}
+db39cf7dd1c478638bdae08932a6d879
+  $fTSequenceRTQueue3 :: Data.TConsList.TConsList c x x
+  {- HasNoCafRefs,
+     Unfolding: (\ @ (c :: * -> * -> *) @ x ->
+                 Data.TConsList.CNil @ c @ x @ x @~ <x>_N) -}
+a3f23ca4a1a56adfe78d7624a01aade6
+  $fTSequenceRTQueue_$c<| ::
+    c x y -> Data.RTQueue.RTQueue c y z -> Data.RTQueue.RTQueue c x z
+  {- Arity: 2, Strictness: <L,U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ (c :: * -> * -> *)
+                   @ x
+                   @ y
+                   @ z
+                   l :: c x y
+                   r :: Data.RTQueue.RTQueue c y z ->
+                 Data.RTQueue.$fTSequenceRTQueue_$c><
+                   @ c
+                   @ x
+                   @ y
+                   @ z
+                   (Data.RTQueue.RQ
+                      @ c
+                      @ x
+                      @ y
+                      @ y
+                      @ y
+                      (Data.TConsList.Cons
+                         @ c
+                         @ x
+                         @ y
+                         @ y
+                         l
+                         (Data.TConsList.$WCNil @ c @ y))
+                      (Data.TSnocList.SNil @ c @ y @ y @~ <y>_N)
+                      (Data.TConsList.CNil @ c @ y @ y @~ <y>_N))
+                   r) -}
+a3f23ca4a1a56adfe78d7624a01aade6
+  $fTSequenceRTQueue_$c>< ::
+    Data.RTQueue.RTQueue c x y
+    -> Data.RTQueue.RTQueue c y z -> Data.RTQueue.RTQueue c x z
+  {- Arity: 2, Strictness: <S,1*U><S,1*U> -}
+a3f23ca4a1a56adfe78d7624a01aade6
+  $fTSequenceRTQueue_$ctempty :: Data.RTQueue.RTQueue c x x
+  {- HasNoCafRefs,
+     Unfolding: (\ @ (c :: * -> * -> *) @ x ->
+                 Data.RTQueue.RQ
+                   @ c
+                   @ x
+                   @ x
+                   @ x
+                   @ x
+                   (Data.RTQueue.$fTSequenceRTQueue3 @ c @ x)
+                   (Data.RTQueue.$fTSequenceRTQueue2 @ c @ x)
+                   (Data.RTQueue.$fTSequenceRTQueue3 @ c @ x)) -}
+a3f23ca4a1a56adfe78d7624a01aade6
+  $fTSequenceRTQueue_$ctsingleton ::
+    c x y -> Data.RTQueue.RTQueue c x y
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ (c :: * -> * -> *) @ x @ y x1 :: c x y ->
+                 Data.RTQueue.RQ
+                   @ c
+                   @ x
+                   @ y
+                   @ y
+                   @ y
+                   (Data.TConsList.Cons
+                      @ c
+                      @ x
+                      @ y
+                      @ y
+                      x1
+                      (Data.TConsList.$WCNil @ c @ y))
+                   (Data.TSnocList.SNil @ c @ y @ y @~ <y>_N)
+                   (Data.TConsList.CNil @ c @ y @ y @~ <y>_N)) -}
+a3f23ca4a1a56adfe78d7624a01aade6
+  $fTSequenceRTQueue_$ctviewl ::
+    Data.RTQueue.RTQueue c x y
+    -> Data.Interface.TSequence.TViewL Data.RTQueue.RTQueue c x y
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ @ (c :: * -> * -> *)
+                   @ x
+                   @ y
+                   ds :: Data.RTQueue.RTQueue c x y ->
+                 case ds of wild { Data.RTQueue.RQ b x1 ds1 ds2 ds3 ->
+                 case ds1 of wild1 {
+                   Data.TConsList.CNil dt
+                   -> case ds2 of wild2 {
+                        Data.TSnocList.SNil dt1
+                        -> case ds3 of wild3 {
+                             Data.TConsList.CNil dt2
+                             -> (Data.Interface.TSequence.$WTEmptyL
+                                   @ Data.RTQueue.RTQueue
+                                   @ c
+                                   @ x)
+                                  `cast`
+                                (Data.Interface.TSequence.TViewL
+                                   <Data.RTQueue.RTQueue>_R <c>_N <x>_N (Trans dt dt1))_R
+                             Data.TConsList.Cons ipv0 ipv ipv1
+                             -> Data.RTQueue.$fTSequenceRTQueue1 @ c @ x @ y }
+                        Data.TSnocList.Snoc ipv0 ipv ipv1
+                        -> Data.RTQueue.$fTSequenceRTQueue1 @ c @ x @ y }
+                   Data.TConsList.Cons y1 h t
+                   -> Data.Interface.TSequence.:|
+                        @ Data.RTQueue.RTQueue
+                        @ c
+                        @ x
+                        @ y
+                        @ y1
+                        h
+                        (case ds3 of wild2 {
+                           Data.TConsList.CNil dt
+                           -> case Data.RTQueue.rotate
+                                     @ c
+                                     @ y1
+                                     @ b
+                                     @ y
+                                     @ y
+                                     t
+                                     ds2
+                                     (Data.TConsList.$WCNil @ c @ y) of dt1 { DEFAULT ->
+                              Data.RTQueue.RQ
+                                @ c
+                                @ y1
+                                @ y
+                                @ y
+                                @ y1
+                                dt1
+                                (Data.TSnocList.SNil @ c @ y @ y @~ <y>_N)
+                                dt1 }
+                           Data.TConsList.Cons y2 h1 t1
+                           -> case t of dt { DEFAULT ->
+                              case t1 of dt1 { DEFAULT ->
+                              Data.RTQueue.RQ @ c @ y1 @ y @ b @ y2 dt ds2 dt1 } } }) } }) -}
+a3f23ca4a1a56adfe78d7624a01aade6
+  $fTSequenceRTQueue_$ctviewr ::
+    Data.RTQueue.RTQueue c x y
+    -> Data.Interface.TSequence.TViewR Data.RTQueue.RTQueue c x y
+  {- Arity: 1, Strictness: <S,1*U> -}
+a3f23ca4a1a56adfe78d7624a01aade6
+  $fTSequenceRTQueue_$c|> ::
+    Data.RTQueue.RTQueue c x y -> c y z -> Data.RTQueue.RTQueue c x z
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: (\ @ (c :: * -> * -> *)
+                   @ x
+                   @ y
+                   @ z
+                   ds :: Data.RTQueue.RTQueue c x y
+                   x1 :: c y z ->
+                 case ds of wild { Data.RTQueue.RQ b x2 f r a ->
+                 case a of wild1 {
+                   Data.TConsList.CNil dt
+                   -> case Data.RTQueue.rotate
+                             @ c
+                             @ x
+                             @ b
+                             @ z
+                             @ z
+                             f
+                             (Data.TSnocList.Snoc @ c @ b @ z @ y r x1)
+                             (Data.TConsList.$WCNil @ c @ z) of dt1 { DEFAULT ->
+                      Data.RTQueue.RQ
+                        @ c
+                        @ x
+                        @ z
+                        @ z
+                        @ x
+                        dt1
+                        (Data.TSnocList.SNil @ c @ z @ z @~ <z>_N)
+                        dt1 }
+                   Data.TConsList.Cons y1 h t
+                   -> case t of dt { DEFAULT ->
+                      Data.RTQueue.RQ
+                        @ c
+                        @ x
+                        @ z
+                        @ b
+                        @ y1
+                        f
+                        (Data.TSnocList.Snoc @ c @ b @ z @ y r x1)
+                        dt } } }) -}
+a3f23ca4a1a56adfe78d7624a01aade6
+  type role RTQueue representational nominal nominal
+  data RTQueue (tc :: * -> * -> *) a b where
+    RQ :: (Data.TConsList.TConsList tc a b1)
+          -> (Data.TSnocList.TSnocList tc b1 b)
+          -> (Data.TConsList.TConsList tc x b1) -> RTQueue tc a b
+a6e4a10261a519e3323048aef19f0e38
+  queue ::
+    Data.TConsList.TConsList tc a b
+    -> Data.TSnocList.TSnocList tc b c
+    -> Data.TConsList.TConsList tc x b
+    -> Data.RTQueue.RTQueue tc a c
+  {- Arity: 3, Strictness: <S,U><S,U><S,1*U>,
+     Unfolding: (\ @ (tc :: * -> * -> *)
+                   @ a
+                   @ b
+                   @ c
+                   @ x
+                   f :: Data.TConsList.TConsList tc a b
+                   r :: Data.TSnocList.TSnocList tc b c
+                   ds :: Data.TConsList.TConsList tc x b ->
+                 case ds of wild {
+                   Data.TConsList.CNil dt
+                   -> case Data.RTQueue.rotate
+                             @ tc
+                             @ a
+                             @ b
+                             @ c
+                             @ c
+                             f
+                             r
+                             (Data.TConsList.$WCNil @ tc @ c) of dt1 { DEFAULT ->
+                      Data.RTQueue.RQ
+                        @ tc
+                        @ a
+                        @ c
+                        @ c
+                        @ a
+                        dt1
+                        (Data.TSnocList.SNil @ tc @ c @ c @~ <c>_N)
+                        dt1 }
+                   Data.TConsList.Cons y h t
+                   -> Data.RTQueue.$WRQ @ tc @ a @ c @ b @ y f r t }) -}
+8554034ba8e451c76ad18c33f694550e
+  revAppend ::
+    Data.TConsList.TConsList tc a b
+    -> Data.TSnocList.TSnocList tc b d
+    -> Data.TConsList.TConsList tc a d
+  {- Arity: 2, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ @ (tc :: * -> * -> *)
+                   @ a
+                   @ b
+                   @ d
+                   l :: Data.TConsList.TConsList tc a b
+                   r :: Data.TSnocList.TSnocList tc b d ->
+                 Data.RTQueue.rotate
+                   @ tc
+                   @ a
+                   @ b
+                   @ d
+                   @ d
+                   l
+                   r
+                   (Data.TConsList.$WCNil @ tc @ d)) -}
+ca75c81ad1b2fa73add9937fc421b7ac
+  rotate ::
+    Data.TConsList.TConsList tc a b
+    -> Data.TSnocList.TSnocList tc b c
+    -> Data.TConsList.TConsList tc c d
+    -> Data.TConsList.TConsList tc a d
+  {- Arity: 3, Strictness: <S,1*U><S,1*U><L,U> -}
+instance Data.Interface.TSequence.TSequence [Data.RTQueue.RTQueue]
+  = Data.RTQueue.$fTSequenceRTQueue
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+
